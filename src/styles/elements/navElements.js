@@ -8,7 +8,7 @@ import { expand } from "../globals/animations";
 /////////////////////LOGO
 
 const ButtonWithLogo = (props) => (
-  <Button color="primary" {...props}>
+  <Button color="inherit" {...props}>
     <SvgLogo width="50" />
   </Button>
 );
@@ -16,6 +16,8 @@ const ButtonWithLogo = (props) => (
 export const NavLogo = styled(ButtonWithLogo)`
   && {
     transition: 0.5s;
+    border-radius: 50%;
+    min-width: 50px;
 
     &:hover {
       transform: scale(1.1);

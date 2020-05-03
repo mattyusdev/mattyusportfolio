@@ -14,7 +14,6 @@ export const FooterAppBar = styled(AppBarWithProps)`
     box-shadow: none;
     position: absolute;
     top: auto;
-    bottom: 0;
     background: ${colors.background};
     padding: 20px 0;
 
