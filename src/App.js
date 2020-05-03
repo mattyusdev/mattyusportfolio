@@ -1,17 +1,20 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
+  const location = useLocation().pathname;
+
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
+      <Navbar location={location} />
 
-        <Route exact path="/" component={Home} />
-      </BrowserRouter>
+      <Route exact path="/" component={Home} />
+
+      {location !== "/" ? <Footer /> : null}
     </>
   );
 }

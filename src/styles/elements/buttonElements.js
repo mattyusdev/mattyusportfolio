@@ -24,7 +24,7 @@ export const ButtonCurly = styled.span`
     `}
 `;
 
-export const ButtonWithProps = ({ active, ...otherProps }) => (
+const ButtonWithProps = ({ active, ...otherProps }) => (
   <Button {...otherProps} />
 );
 
@@ -44,7 +44,7 @@ export const ButtonMain = styled(ButtonWithProps)`
           " , " +
           colors.gradientTwo +
           ")"};
-    margin: 0 1px;
+    margin: 0;
     font-size: 12px;
     letter-spacing: 2px;
     transition: 0.5s;

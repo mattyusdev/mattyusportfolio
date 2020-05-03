@@ -40,7 +40,7 @@ export const IamComma = styled.span`
 
 export const MattyusHeader = styled.h1`
   font-size: 110px;
-  line-height: 80px;
+  line-height: 90px;
   letter-spacing: 3px;
   margin: 0 0 40px 0;
 `;
@@ -48,7 +48,7 @@ export const MattyusHeader = styled.h1`
 export const MattyusCurly = styled.span`
   font-size: 120px;
   font-weight: 400;
-  margin: 10px;
+  margin: 20px;
   color: ${colors.secondary};
 `;
 
@@ -56,7 +56,7 @@ export const MattyusCurly = styled.span`
 
 export const HomeHr = styled.hr`
   border: 1.5px solid ${colors.primary};
-  width: 350px;
+  width: 300px;
   animation: ${expand} 1s ease-in-out;
 `;
 

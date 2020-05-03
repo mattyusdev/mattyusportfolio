@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { AppBar, Button } from "@material-ui/core";
 import SvgLogo from "../../svg/SvgLogo";
 import colors from "../globals/palette";
@@ -7,7 +7,7 @@ import { expand } from "../globals/animations";
 
 /////////////////////LOGO
 
-export const ButtonWithLogo = (props) => (
+const ButtonWithLogo = (props) => (
   <Button color="primary" {...props}>
     <SvgLogo width="50" />
   </Button>
@@ -25,7 +25,7 @@ export const NavLogo = styled(ButtonWithLogo)`
 
 /////////////////////BAR
 
-export const AppBarWithProps = ({ active, ...otherProps }) => (
+const AppBarWithProps = ({ active, ...otherProps }) => (
   <AppBar {...otherProps} />
 );
 
@@ -39,8 +39,8 @@ export const NavAppBar = styled(AppBarWithProps)`
         ? css`
             position: fixed;
             background: ${colors.background};
-            padding: 20px 100px;
-            &:after {
+            padding: 20px 120px 20px 200px;
+            &::after {
               position: absolute;
               bottom: 0;
               left: 0;
@@ -55,7 +55,7 @@ export const NavAppBar = styled(AppBarWithProps)`
         : css`
             position: absolute;
             background: transparent;
-            padding: 30px 100px;
+            padding: 30px 100px 20px 180px;
           `}
   }
 `;

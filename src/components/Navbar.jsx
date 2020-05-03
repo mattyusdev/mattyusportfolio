@@ -2,19 +2,11 @@ import React from "react";
 import { NavAppBar, NavSpacer, NavLogo } from "../styles/elements/navElements";
 import Toolbar from "@material-ui/core/Toolbar";
 import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ location }) {
   return (
-    <NavAppBar
-      component="nav"
-      active={
-        !useRouteMatch({
-          path: "/",
-          exact: true,
-        })
-      }
-    >
+    <NavAppBar component="nav" active={location !== "/"}>
       <Toolbar>
         <NavLogo component={Link} to="/" />
 
@@ -23,22 +15,14 @@ export default function Navbar() {
         <ButtonMain
           component={Link}
           to="/mywork"
-          active={useRouteMatch({
-            path: "/mywork",
-          })}
+          active={location === "/mywork"}
         >
           <ButtonCurly left={true}>{"{"}</ButtonCurly>
           MY WORK
           <ButtonCurly right={true}>{"}"}</ButtonCurly>
         </ButtonMain>
 
-        <ButtonMain
-          component={Link}
-          to="/about"
-          active={useRouteMatch({
-            path: "/about",
-          })}
-        >
+        <ButtonMain component={Link} to="/about" active={location === "/about"}>
           <ButtonCurly left={true}>{"{"}</ButtonCurly>
           ABOUT ME
           <ButtonCurly right={true}>{"}"}</ButtonCurly>
@@ -47,9 +31,7 @@ export default function Navbar() {
         <ButtonMain
           component={Link}
           to="/contact"
-          active={useRouteMatch({
-            path: "/contact",
-          })}
+          active={location === "/contact"}
         >
           <ButtonCurly left={true}>{"{"}</ButtonCurly>
           GET IN TOUCH
