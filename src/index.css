@@ -1,17 +1,22 @@
 @font-face {
-  font-family: "Gill Sans MT";
-  src: url("/fonts/GIL_____.TTF");
+  font-family: "Gill Sans MT ";
+  src: url("/fonts/GILB____.TTF");
 }
 
 body {
   margin: 0;
   padding: 0;
+  background: #180852;
   box-sizing: border-box;
   font-family: "Gill Sans MT", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
+}
+
+* {
+  font-family: "Gill Sans MT";
 }
 
 code {

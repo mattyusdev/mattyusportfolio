@@ -1,8 +1,9 @@
 import React from "react";
+import { Button } from "@material-ui/core";
 
 export default function Logo(props) {
   return (
-    <svg width="50" viewBox="0 0 1020.83 858.1" {...props}>
+    <svg viewBox="0 0 1020.83 858.1" {...props}>
       <path
         fill="#306ef8"
         fillRule="evenodd"
