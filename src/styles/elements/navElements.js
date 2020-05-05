@@ -39,7 +39,7 @@ export const NavAppBar = styled(AppBarWithProps)`
     ${(props) =>
       props.active
         ? css`
-            position: fixed;
+            position: sticky;
             background: ${colors.background};
             padding: 20px 120px 20px 200px;
             &::after {

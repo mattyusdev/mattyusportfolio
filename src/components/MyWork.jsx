@@ -7,12 +7,17 @@ export default function MyWork() {
   return (
     <MyWorkRow>
       <MyWorkColumn>
-        <ButtonMain active={true} component={Link} to="/mywork/code">
+        <ButtonMain active={true} big={true} component={Link} to="/mywork/code">
           VIEW CODE
         </ButtonMain>
       </MyWorkColumn>
       <MyWorkColumn background={true}>
-        <ButtonMain active={true} component={Link} to="/mywork/design">
+        <ButtonMain
+          active={true}
+          big={true}
+          component={Link}
+          to="/mywork/design"
+        >
           VIEW DESIGN
         </ButtonMain>
       </MyWorkColumn>

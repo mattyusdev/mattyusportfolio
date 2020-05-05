@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const MyWorkRow = styled.main`
-  min-height: calc(100vh - 104px);
+  min-height: calc(100vh - 208px);
   display: flex;
   width: 100%;
 `;

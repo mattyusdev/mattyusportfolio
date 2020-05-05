@@ -4,7 +4,6 @@ import {
   SocialButton,
   FooterToolBar,
 } from "../styles/elements/footerElements";
-
 import { FaInstagram, FaFacebookF, FaTwitter, FaBehance } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
