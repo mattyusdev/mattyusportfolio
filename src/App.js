@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import MyWork from "./components/MyWork";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
+import MyWorkDesign from "./components/MyWorkDesign";
 
 function App() {
   const location = useLocation().pathname;
@@ -17,9 +18,14 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Home} />
+
         <Route exact path="/mywork" component={MyWork} />
+        <Route exact path="/mywork/design" component={MyWorkDesign} />
+
         <Route exact path="/about" component={AboutMe} />
+
         <Route exact path="/contact" component={Contact} />
+
         <Route path="/*">
           <Redirect to="/" />
         </Route>

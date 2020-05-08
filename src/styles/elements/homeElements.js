@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import colors from "../globals/palette";
-import { expand } from "../globals/animations";
+import { slideDown, width } from "../globals/animations";
 
 /////////////////////BACKGROUND
 
@@ -12,6 +12,7 @@ export const HomeBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: ${slideDown} 0.3s ease-in;
 `;
 
 /////////////////////HEADER
@@ -45,6 +46,10 @@ export const MattyusHeader = styled.h1`
   margin: 0 0 40px 0;
 `;
 
+export const MattyusHeaderText = styled.span`
+  animation-delay: 0.5s;
+`;
+
 export const MattyusCurly = styled.span`
   font-size: 120px;
   font-weight: 400;
@@ -57,7 +62,8 @@ export const MattyusCurly = styled.span`
 export const HomeHr = styled.hr`
   border: 1.5px solid ${colors.primary};
   width: 300px;
-  animation: ${expand} 1s ease-in-out;
+  animation: ${width} 1s ease-in-out;
+  animation-delay: 1.5s;
 `;
 
 ////////////Web Fullstack Design

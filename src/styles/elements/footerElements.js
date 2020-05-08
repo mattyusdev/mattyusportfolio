@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import colors from "../globals/palette";
-import { expand } from "../globals/animations";
+import { slideLeft } from "../globals/animations";
 
 /////////////////////APP BAR
 
@@ -12,8 +12,7 @@ export const FooterAppBar = styled(AppBarWithProps)`
   && {
     transition: 0.5s;
     box-shadow: none;
-    position: absolute;
-    top: auto;
+    position: relative;
     background: ${colors.background};
     padding: 20px 0;
 
@@ -26,7 +25,7 @@ export const FooterAppBar = styled(AppBarWithProps)`
       width: 100%;
       height: 2px;
       background: ${colors.secondary};
-      animation: ${expand} 0.3s;
+      animation: ${slideLeft} 1s;
     }
   }
 `;

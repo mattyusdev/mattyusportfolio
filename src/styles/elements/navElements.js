@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { AppBar, Button } from "@material-ui/core";
 import SvgLogo from "../../svg/SvgLogo";
 import colors from "../globals/palette";
-import { expand } from "../globals/animations";
+import { slideRight } from "../globals/animations";
 
 /////////////////////LOGO
 
@@ -51,7 +51,7 @@ export const NavAppBar = styled(AppBarWithProps)`
               width: 100%;
               height: 2px;
               background: ${colors.primary};
-              animation: ${expand} 0.3s linear;
+              animation: ${slideRight} 1s;
             }
           `
         : css`

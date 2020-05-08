@@ -2,17 +2,26 @@ import React from "react";
 import styled, { css } from "styled-components";
 import colors from "../globals/palette";
 import { Tooltip, Zoom, IconButton } from "@material-ui/core";
-import { expand } from "../globals/animations";
 
 /////////////////////BACKGROUND
 
 export const AboutBackground = styled.div`
+  min-height: calc(100vh - 208px);
+  overflow: auto;
+`;
+
+export const AboutRow = styled.div`
   height: 650px;
-  background: url("/Home_.jpg") no-repeat center fixed;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${(props) =>
+    props.background &&
+    css`
+      background: url("/Home_.jpg") no-repeat center fixed;
+      background-size: cover;
+    `}
 `;
 
 /////////////////////ABOUT
@@ -66,7 +75,6 @@ export const SkillsMain = styled.main`
 
 export const SkillsUl = styled.ul`
   display: inline-block;
-  animation: ${expand} 1s ease-in;
 `;
 
 export const SkillsLi = styled.li`

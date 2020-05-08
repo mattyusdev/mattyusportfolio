@@ -15,7 +15,7 @@ export default function Navbar({ location }) {
         <ButtonMain
           component={Link}
           to="/mywork"
-          active={location === "/mywork"}
+          active={location.includes("/mywork")}
         >
           <ButtonCurly left={true}>{"{"}</ButtonCurly>
           MY WORK

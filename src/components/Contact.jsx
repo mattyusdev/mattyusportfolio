@@ -1,10 +1,31 @@
 import React from "react";
-import { MyWorkRow } from "../styles/elements/myWorkElements";
+import {
+  ContactBackground,
+  ContactRow,
+  ContactForm,
+  ContactMail,
+  ContactTextField,
+} from "../styles/elements/contactElements";
+import PageHeader from "../styles/elements/pageHeaderElements";
+import { AiOutlineMail } from "react-icons/ai";
+import Form from "./Form";
 
 export default function Contact() {
   return (
-    <MyWorkRow>
-      <h1>ba</h1>
-    </MyWorkRow>
+    <>
+      <ContactBackground>
+        <ContactRow top={true}>
+          <PageHeader text="GET IN TOUCH" />
+        </ContactRow>
+        <Form />
+
+        <ContactRow>
+          <ContactMail>
+            <AiOutlineMail />
+            matan@mattyus.com
+          </ContactMail>
+        </ContactRow>
+      </ContactBackground>
+    </>
   );
 }

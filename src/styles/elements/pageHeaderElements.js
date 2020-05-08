@@ -1,11 +1,21 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import colors from "../globals/palette";
+import Fade from "react-reveal/Fade";
+import Bounce from "react-reveal/Bounce";
 
 const PageHeaderFrame = styled.h1`
   text-align: center;
-  margin: 55px 0 0 0;
   letter-spacing: 2px;
+
+  ${(props) =>
+    props.myWork
+      ? css`
+          margin: 20px 0 0 0;
+        `
+      : css`
+          margin: 55px 0 0 0;
+        `}
 `;
 
 const PageHeaderText = styled.span``;
@@ -31,19 +41,31 @@ const PageHeaderCurly = styled.span`
 `;
 
 const PageHeaderHr = styled.hr`
-  margin: 20px auto 80px auto;
   width: 80px;
   border: 1.5px solid ${colors.primary};
+
+  ${(props) =>
+    props.myWork
+      ? css`
+          margin: 20px auto 20px auto;
+        `
+      : css`
+          margin: 20px auto 80px auto;
+        `}
 `;
 
 const PageHeader = (props) => (
   <>
-    <PageHeaderFrame {...props}>
-      <PageHeaderCurly left={true}>{"{"}</PageHeaderCurly>
-      <PageHeaderText>{props.text}</PageHeaderText>
-      <PageHeaderCurly right={true}>{"}"}</PageHeaderCurly>
-    </PageHeaderFrame>
-    <PageHeaderHr />
+    <Fade top>
+      <PageHeaderFrame {...props}>
+        <PageHeaderCurly left={true}>{"{"}</PageHeaderCurly>
+        <PageHeaderText>{props.text}</PageHeaderText>
+        <PageHeaderCurly right={true}>{"}"}</PageHeaderCurly>
+      </PageHeaderFrame>
+    </Fade>
+    <Bounce top>
+      <PageHeaderHr myWork={props.myWork} />
+    </Bounce>
   </>
 );
 

@@ -24,7 +24,7 @@ export const ButtonCurly = styled.span`
     `}
 `;
 
-const ButtonWithProps = ({ active, big, ...otherProps }) => (
+const ButtonWithProps = ({ active, big, small, ...otherProps }) => (
   <Button {...otherProps} />
 );
 
@@ -45,20 +45,28 @@ export const ButtonMain = styled(ButtonWithProps)`
     transition: 0.5s;
 
     ${(props) =>
-      !props.big
+      props.big
         ? css`
-            font-size: 12px;
-            height: 48px;
-            line-height: 48px;
-            padding: 0 30px;
-            border-radius: 100px;
-          `
-        : css`
             font-size: 15px;
             height: 62px;
             line-height: 62px;
             padding: 0 39px;
             border-radius: 130px;
+          `
+        : props.small
+        ? css`
+            font-size: 8px;
+            height: 33px;
+            line-height: 33px;
+            padding: 0 21px;
+            border-radius: 70px;
+          `
+        : css`
+            font-size: 12px;
+            height: 48px;
+            line-height: 48px;
+            padding: 0 30px;
+            border-radius: 100px;
           `}
 
     &:hover {
