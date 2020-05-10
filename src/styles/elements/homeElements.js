@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import colors from "../globals/palette";
 import { slideDown, width } from "../globals/animations";
+import { device } from "../globals/responsive";
 
 /////////////////////BACKGROUND
 
@@ -28,9 +29,9 @@ export const HomeHeader = styled.header`
 ////////////I'm
 
 export const IamHeader = styled.h2`
-  font-size: 60px;
+  font-size: 5rem;
   margin: 0;
-  letter-spacing: 1px;
+  letter-spacing: 0.06rem;
 `;
 
 export const IamComma = styled.span`
@@ -40,10 +41,10 @@ export const IamComma = styled.span`
 ////////////Mattyus
 
 export const MattyusHeader = styled.h1`
-  font-size: 110px;
-  line-height: 90px;
-  letter-spacing: 3px;
-  margin: 0 0 40px 0;
+  font-size: 6.8rem;
+  line-height: 6rem;
+  letter-spacing: 0.18rem;
+  margin: 0 0 2.5rem 0;
 `;
 
 export const MattyusHeaderText = styled.span`
@@ -51,9 +52,9 @@ export const MattyusHeaderText = styled.span`
 `;
 
 export const MattyusCurly = styled.span`
-  font-size: 120px;
+  font-size: 7.5rem;
   font-weight: 400;
-  margin: 20px;
+  margin: 1.25rem;
   color: ${colors.secondary};
 `;
 
@@ -61,15 +62,19 @@ export const MattyusCurly = styled.span`
 
 export const HomeHr = styled.hr`
   border: 1.5px solid ${colors.primary};
-  width: 300px;
-  /* animation: ${width} 1s ease-in-out; */
-  /* animation-delay: 1.5s; */
+  width: 18.75rem;
 `;
 
 ////////////Web Fullstack Design
 
 export const WebHeader = styled.h3`
-  font-size: 25px;
-  letter-spacing: 5px;
-  margin: 20px 0;
+  font-size: 1.55rem;
+  letter-spacing: 0.3rem;
+  margin: 1.25rem 0;
+
+  @media ${device.tablet} {
+    font-size: 1.7rem;
+    letter-spacing: 0.4rem;
+    margin: 1.3rem 0;
+  }
 `;

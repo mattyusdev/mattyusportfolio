@@ -15,6 +15,7 @@ export const FooterAppBar = styled(AppBarWithProps)`
     position: relative;
     background: ${colors.background};
     padding: 20px 0;
+    z-index: 1;
 
     &::before {
       position: absolute;

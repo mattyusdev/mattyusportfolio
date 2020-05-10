@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Route, useLocation, Redirect, Switch } from "react-router-dom";
 import Home from "./components/Home";
@@ -8,13 +8,21 @@ import MyWork from "./components/MyWork";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import MyWorkDesign from "./components/MyWorkDesign";
+import { GlobalStyle } from "./styles/globals/responsive";
 
 function App() {
   const location = useLocation().pathname;
 
+  const [isOpenNav, setIsOpenNav] = useState(false);
+
   return (
     <>
-      <Navbar location={location} />
+      <GlobalStyle isOpenNav={isOpenNav} />
+      <Navbar
+        location={location}
+        isOpenNav={isOpenNav}
+        setIsOpenNav={setIsOpenNav}
+      />
 
       <Switch>
         <Route exact path="/" component={Home} />
