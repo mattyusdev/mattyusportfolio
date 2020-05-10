@@ -8,6 +8,7 @@ import { ButtonMain } from "../styles/elements/buttonElements";
 import { BsPerson, BsPencilSquare } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiMessage2Line } from "react-icons/ri";
+import { CustomFade } from "../styles/globals/animations";
 
 const initial = {
   name: "",
@@ -44,58 +45,64 @@ export default function Form() {
       validationSchema={validationSchema}
     >
       {({ values, errors, touched }) => (
-        <ContactForm>
-          <Field
-            name="name"
-            placeholder="Name..."
-            as={ContactField}
-            error={errors.name && touched.name ? true : false}
-            helperText={errors.name && touched.name ? errors.name : null}
-          >
-            <BsPerson />
-          </Field>
+        <CustomFade>
+          <ContactForm>
+            <CustomFade cascade duration={700} damping={0.4} direction="left">
+              <Field
+                name="name"
+                placeholder="Name..."
+                as={ContactField}
+                error={errors.name && touched.name ? true : false}
+                helperText={errors.name && touched.name ? errors.name : null}
+              >
+                <BsPerson />
+              </Field>
 
-          <Field
-            type="email"
-            name="email"
-            placeholder="Email..."
-            as={ContactField}
-            error={errors.email && touched.email ? true : false}
-            helperText={errors.email && touched.email ? errors.email : null}
-          >
-            <AiOutlineMail />
-          </Field>
+              <Field
+                type="email"
+                name="email"
+                placeholder="Email..."
+                as={ContactField}
+                error={errors.email && touched.email ? true : false}
+                helperText={errors.email && touched.email ? errors.email : null}
+              >
+                <AiOutlineMail />
+              </Field>
 
-          <Field
-            name="subject"
-            placeholder="Subject..."
-            as={ContactField}
-            error={errors.subject && touched.subject ? true : false}
-            helperText={
-              errors.subject && touched.subject ? errors.subject : null
-            }
-          >
-            <BsPencilSquare />
-          </Field>
+              <Field
+                name="subject"
+                placeholder="Subject..."
+                as={ContactField}
+                error={errors.subject && touched.subject ? true : false}
+                helperText={
+                  errors.subject && touched.subject ? errors.subject : null
+                }
+              >
+                <BsPencilSquare />
+              </Field>
 
-          <Field
-            multiline
-            rowsMax={4}
-            name="message"
-            placeholder="Message..."
-            as={ContactField}
-            error={errors.message && touched.message ? true : false}
-            helperText={
-              errors.message && touched.message ? errors.message : null
-            }
-          >
-            <RiMessage2Line />
-          </Field>
+              <Field
+                multiline
+                rowsMax={4}
+                name="message"
+                placeholder="Message..."
+                as={ContactField}
+                error={errors.message && touched.message ? true : false}
+                helperText={
+                  errors.message && touched.message ? errors.message : null
+                }
+              >
+                <RiMessage2Line />
+              </Field>
+            </CustomFade>
 
-          <ButtonMain type="submit" active={true}>
-            SEND
-          </ButtonMain>
-        </ContactForm>
+            <CustomFade delay={1600} direction="bottom">
+              <ButtonMain type="submit" active={true}>
+                SEND
+              </ButtonMain>
+            </CustomFade>
+          </ContactForm>
+        </CustomFade>
       )}
     </Formik>
   );

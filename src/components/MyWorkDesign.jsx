@@ -9,14 +9,14 @@ import { ButtonMain } from "../styles/elements/buttonElements";
 import { Link } from "react-router-dom";
 import MyWorkImage from "./MyWorkImage";
 import designImages from "../data/designImages";
-import Zoom from "react-reveal/Zoom";
+import { CustomFade } from "../styles/globals/animations";
 
 export default function MyWorkDesign() {
   return (
-    <Zoom duration={500}>
-      <MyWorkBackground notMain={true}>
-        <MyWorkHeader>
-          <header>
+    <MyWorkBackground notMain={true}>
+      <MyWorkHeader>
+        <header>
+          <CustomFade triggerOnce delay={1000} direction="top">
             <ButtonMain
               component={Link}
               to="/mywork/code"
@@ -25,16 +25,18 @@ export default function MyWorkDesign() {
             >
               VIEW CODE
             </ButtonMain>
+          </CustomFade>
 
-            <PageHeader myWork={true} text="MY DESIGN PROJECTS" />
-          </header>
-        </MyWorkHeader>
+          <PageHeader myWork={true} text="MY DESIGN PROJECTS" />
+        </header>
+      </MyWorkHeader>
+      <CustomFade delay={300} duration={300} triggerOnce direction="top">
         <MyWorkImagesRow>
           {designImages.map((i) => (
             <MyWorkImage data={i} key={i.img} />
           ))}
         </MyWorkImagesRow>
-      </MyWorkBackground>
-    </Zoom>
+      </CustomFade>
+    </MyWorkBackground>
   );
 }

@@ -1,8 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import colors from "../globals/palette";
-import Fade from "react-reveal/Fade";
-import Bounce from "react-reveal/Bounce";
+import { CustomZoom } from "../globals/animations";
 
 const PageHeaderFrame = styled.h1`
   text-align: center;
@@ -56,16 +55,16 @@ const PageHeaderHr = styled.hr`
 
 const PageHeader = (props) => (
   <>
-    <Fade top>
+    <CustomZoom triggerOnce>
       <PageHeaderFrame {...props}>
         <PageHeaderCurly left={true}>{"{"}</PageHeaderCurly>
         <PageHeaderText>{props.text}</PageHeaderText>
         <PageHeaderCurly right={true}>{"}"}</PageHeaderCurly>
       </PageHeaderFrame>
-    </Fade>
-    <Bounce top>
+    </CustomZoom>
+    <CustomZoom triggerOnce delay={300}>
       <PageHeaderHr myWork={props.myWork} />
-    </Bounce>
+    </CustomZoom>
   </>
 );
 

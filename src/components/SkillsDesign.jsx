@@ -8,11 +8,18 @@ import {
 } from "../styles/elements/aboutElements";
 import { DiPhotoshop, DiIllustrator } from "react-icons/di";
 import Fade from "react-reveal/Fade";
+import { CustomFade } from "../styles/globals/animations";
 
 export default function SkillsDesign() {
   return (
     <SkillsUl>
-      <Fade left duration={300} delay={100}>
+      <CustomFade
+        triggerOnce
+        direction="left"
+        cascade
+        damping={0.2}
+        fraction={1}
+      >
         <SkillsLi>
           GRAPHIC
           <SkillsChip>
@@ -29,7 +36,7 @@ export default function SkillsDesign() {
             </SkillsTooltip>
           </SkillsChip>
         </SkillsLi>
-      </Fade>
+      </CustomFade>
     </SkillsUl>
   );
 }

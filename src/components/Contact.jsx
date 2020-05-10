@@ -9,6 +9,7 @@ import {
 import PageHeader from "../styles/elements/pageHeaderElements";
 import { AiOutlineMail } from "react-icons/ai";
 import Form from "./Form";
+import { CustomFade } from "../styles/globals/animations";
 
 export default function Contact() {
   return (
@@ -17,6 +18,7 @@ export default function Contact() {
         <ContactRow top={true}>
           <PageHeader text="GET IN TOUCH" />
         </ContactRow>
+
         <Form />
 
         <ContactRow>

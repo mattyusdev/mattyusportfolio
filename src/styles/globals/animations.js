@@ -1,4 +1,6 @@
-import { keyframes } from "styled-components";
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 export const slideRight = keyframes`
   0% {
@@ -41,3 +43,15 @@ export const width = keyframes`
   width: 100;
 }
 `;
+
+export const CustomFade = styled(Fade)`
+  && > * {
+    opacity: 0;
+  }
+`;
+
+export const CustomZoom = ({ children, ...props }) => (
+  <Zoom {...props}>
+    <CustomFade triggerOnce>{children}</CustomFade>
+  </Zoom>
+);

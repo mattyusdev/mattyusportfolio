@@ -42,8 +42,8 @@ export const AboutHeart = styled.span`
 export const AboutImage = styled.img`
   width: 200px;
   border-radius: 50%;
-  border: 4px solid #190d56;
-  /* box-shadow: -2px 16px 44px -10px rgba(0,0,0,0.62); */
+  /* border: 5px solid ${colors.tertiary}; */
+  box-shadow: -2px 16px 44px -10px rgba(0, 0, 0, 0.62);
   display: block;
   margin: 70px auto;
 `;

@@ -5,14 +5,15 @@ import {
 } from "../styles/elements/myWorkElements";
 import { Link } from "react-router-dom";
 import { ButtonMain } from "../styles/elements/buttonElements";
-import Fade from "react-reveal/Fade";
+import { CustomFade } from "../styles/globals/animations";
 
 export default function MyWork() {
   return (
     <MyWorkBackground>
       <MyWorkColumn>
-        <Fade top>
+        <CustomFade direction="top">
           <ButtonMain
+            style={{ opacity: 0 }}
             active={true}
             big={true}
             component={Link}
@@ -20,11 +21,12 @@ export default function MyWork() {
           >
             VIEW CODE
           </ButtonMain>
-        </Fade>
+        </CustomFade>
       </MyWorkColumn>
       <MyWorkColumn background={true}>
-        <Fade top>
+        <CustomFade direction="top">
           <ButtonMain
+            style={{ opacity: 0 }}
             active={true}
             big={true}
             component={Link}
@@ -32,7 +34,7 @@ export default function MyWork() {
           >
             VIEW DESIGN
           </ButtonMain>
-        </Fade>
+        </CustomFade>
       </MyWorkColumn>
     </MyWorkBackground>
   );

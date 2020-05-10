@@ -4,13 +4,13 @@ import { slideRight } from "../globals/animations";
 
 export const MyWorkBackground = styled.main`
   min-height: calc(100vh - 208px);
-  animation-delay: 2s;
   /* animation: ${slideRight} 0.3s ease-in; */
 
   ${(props) =>
     props.notMain
       ? css`
           display: block;
+          background: ${colors.background};
         `
       : css`
           display: flex;
@@ -45,7 +45,6 @@ export const MyWorkHeader = styled.div`
 `;
 
 export const MyWorkImagesRow = styled.main`
-  background: red;
   display: flex;
   flex-wrap: wrap;
 `;

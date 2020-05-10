@@ -12,7 +12,7 @@ export const HomeBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: ${slideDown} 0.3s ease-in;
+  /* animation: ${slideDown} 0.3s ease-in; */
 `;
 
 /////////////////////HEADER
@@ -62,8 +62,8 @@ export const MattyusCurly = styled.span`
 export const HomeHr = styled.hr`
   border: 1.5px solid ${colors.primary};
   width: 300px;
-  animation: ${width} 1s ease-in-out;
-  animation-delay: 1.5s;
+  /* animation: ${width} 1s ease-in-out; */
+  /* animation-delay: 1.5s; */
 `;
 
 ////////////Web Fullstack Design

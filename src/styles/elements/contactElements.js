@@ -16,6 +16,7 @@ export const ContactRow = styled.div`
   height: calc(50vh - 104px);
   width: 100%;
   position: absolute;
+  z-index: -1;
 
   ${(props) =>
     props.top

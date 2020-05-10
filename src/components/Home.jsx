@@ -13,19 +13,18 @@ import {
 } from "../styles/elements/homeElements";
 import { ButtonMain } from "../styles/elements/buttonElements";
 import { Link } from "react-router-dom";
-import Fade from "react-reveal/Fade";
-import Bounce from "react-reveal/Bounce";
+import { CustomFade, CustomZoom } from "../styles/globals/animations";
 
 export default function Home() {
   return (
     <HomeBackground>
       <HomeHeader>
-        <Fade top>
+        <CustomFade direction="top" delay={300}>
           <IamHeader>
             I<IamComma>’</IamComma>m
           </IamHeader>
-        </Fade>
-        <Fade delay={500}>
+        </CustomFade>
+        <CustomZoom delay={1000}>
           <MattyusHeader>
             <MattyusCurly>{"{"}</MattyusCurly>
             <MattyusHeaderText>
@@ -33,21 +32,19 @@ export default function Home() {
             </MattyusHeaderText>
             <MattyusCurly>{"}"}</MattyusCurly>
           </MattyusHeader>
-        </Fade>
-        <Fade delay={1500}>
+        </CustomZoom>
+        <CustomZoom delay={1300}>
           <HomeHr />
-        </Fade>
-        <Fade delay={1500}>
+        </CustomZoom>
+        <CustomFade direction="bottom" delay={2000}>
           <WebHeader>
             WEB <LightFont>X</LightFont> FULLSTACK <LightFont>X</LightFont>{" "}
             DESIGN
           </WebHeader>
-        </Fade>
-        <Fade top delay={1900}>
           <ButtonMain component={Link} to="/mywork" active={true}>
             MY WORK
           </ButtonMain>
-        </Fade>
+        </CustomFade>
       </HomeHeader>
     </HomeBackground>
   );

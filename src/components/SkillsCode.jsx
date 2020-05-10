@@ -22,12 +22,18 @@ import {
   FaDigitalOcean,
 } from "react-icons/fa";
 import { DiMongodb, DiHeroku, DiMysql } from "react-icons/di";
-import Fade from "react-reveal/Fade";
+import { CustomFade } from "../styles/globals/animations";
 
 export default function SkillsCode() {
   return (
     <SkillsUl>
-      <Fade left duration={300} delay={100}>
+      <CustomFade
+        triggerOnce
+        direction="left"
+        cascade
+        damping={0.2}
+        fraction={1}
+      >
         <SkillsLi>
           FRONT <SkillsLight>END</SkillsLight>
           <SkillsChip>
@@ -68,9 +74,7 @@ export default function SkillsCode() {
             </SkillsTooltip>
           </SkillsChip>
         </SkillsLi>
-      </Fade>
 
-      <Fade left duration={300} delay={200}>
         <SkillsLi>
           BACK <SkillsLight>END</SkillsLight>
           <SkillsChip>
@@ -93,9 +97,7 @@ export default function SkillsCode() {
             </SkillsTooltip>
           </SkillsChip>
         </SkillsLi>
-      </Fade>
 
-      <Fade left duration={300} delay={300}>
         <SkillsLi>
           GIT
           <SkillsChip>
@@ -112,9 +114,7 @@ export default function SkillsCode() {
             </SkillsTooltip>
           </SkillsChip>
         </SkillsLi>
-      </Fade>
 
-      <Fade left duration={300} delay={400}>
         <SkillsLi>
           CLOUD
           <SkillsChip>
@@ -131,7 +131,7 @@ export default function SkillsCode() {
             </SkillsTooltip>
           </SkillsChip>
         </SkillsLi>
-      </Fade>
+      </CustomFade>
     </SkillsUl>
   );
 }
