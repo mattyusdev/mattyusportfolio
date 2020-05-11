@@ -5,6 +5,7 @@ import {
   SkillsChip,
   SkillsTooltip,
   SkillsIconButton,
+  SkillsText,
 } from "../styles/elements/aboutElements";
 import { DiPhotoshop, DiIllustrator } from "react-icons/di";
 import Fade from "react-reveal/Fade";
@@ -21,7 +22,7 @@ export default function SkillsDesign() {
         fraction={1}
       >
         <SkillsLi>
-          GRAPHIC
+          <SkillsText>GRAPHIC</SkillsText>
           <SkillsChip>
             <SkillsTooltip title="Photoshop">
               <SkillsIconButton customColor="#5aa4c5">

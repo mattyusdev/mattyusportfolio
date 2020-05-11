@@ -32,6 +32,7 @@ export const NavLogo = styled(ButtonWithLogo)`
       @media ${device.tablet} {
         width: 4.125rem;
         line-height: 4.125rem;
+        z-index: 6;
       }
 
       @media ${device.mobileM} {
@@ -63,6 +64,7 @@ export const NavAppBar = styled(AppBarWithProps)`
             position: sticky;
             background: ${colors.background};
             padding: 20px 0;
+            height: 104px;
             &::after {
               position: absolute;
               bottom: 0;
@@ -79,6 +81,7 @@ export const NavAppBar = styled(AppBarWithProps)`
             position: absolute;
             background: transparent;
             padding: 30px 0;
+            height: 115px;
           `}
   }
 

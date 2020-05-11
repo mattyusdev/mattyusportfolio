@@ -15,13 +15,12 @@ import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
 import SkillsCode from "./SkillsCode";
 import SkillsDesign from "./SkillsDesign";
 import { CustomFade } from "../styles/globals/animations";
+import useScrollTop from "../hooks/useScrollTop";
 
 export default function AboutMe() {
   const [isCode, setIsCode] = useState(true);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollTop();
 
   return (
     <AboutBackground>
@@ -55,7 +54,7 @@ export default function AboutMe() {
             >
               {" "}
               <ButtonCurly left={true}>{"{"}</ButtonCurly>
-              CODE TECH'S
+              VIEW CODE
               <ButtonCurly right={true}>{"}"}</ButtonCurly>
             </ButtonMain>
 

@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import colors from "../globals/palette";
 import { Tooltip, Zoom, IconButton } from "@material-ui/core";
+import { device } from "../globals/responsive";
 
 /////////////////////BACKGROUND
 
@@ -11,7 +12,7 @@ export const AboutBackground = styled.div`
 `;
 
 export const AboutRow = styled.div`
-  height: 650px;
+  /* height: 650px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,11 +28,12 @@ export const AboutRow = styled.div`
 /////////////////////ABOUT
 
 export const AboutHeader = styled.header`
-  width: 40%;
   height: 100%;
 `;
 
 export const AboutInfo = styled.h4`
+  width: 70%;
+  margin: 20px auto;
   text-align: center;
 `;
 
@@ -40,7 +42,7 @@ export const AboutHeart = styled.span`
 `;
 
 export const AboutImage = styled.img`
-  width: 200px;
+  width: 13rem;
   border-radius: 50%;
   /* border: 5px solid ${colors.tertiary}; */
   box-shadow: -2px 16px 44px -10px rgba(0, 0, 0, 0.62);
@@ -52,53 +54,72 @@ export const AboutImage = styled.img`
 
 export const SkillsBackground = styled.div`
   height: 650px;
-
-  & > * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 0;
-  }
 `;
 
 export const SkillsHeader = styled.div`
-  && > * {
-    margin: 0 90px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5rem 0;
+
+  @media ${device.mobileL} {
+    justify-content: space-around;
   }
 `;
 
 export const SkillsMain = styled.main`
-  padding: 30px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 `;
 
 /////////////////////SKILLS UL
 
 export const SkillsUl = styled.ul`
   display: inline-block;
+  padding: 0;
 `;
 
 export const SkillsLi = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 14px 0;
-  font-size: 24px;
+  margin: 1rem 0;
+  font-size: 1.5rem;
   font-weight: bold;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+
+  @media ${device.mobileM} {
+    font-size: 3rem;
+    margin: 3rem 0;
+  }
+`;
+
+export const SkillsText = styled.span`
+  @media ${device.tablet} {
+    margin: 1rem 0;
+  }
 `;
 
 export const SkillsLight = styled.span`
   font-weight: 400;
-  margin-left: 13px;
+  margin-left: 1rem;
 `;
 
 export const SkillsChip = styled.div`
-  margin: 0 15px;
+  margin: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: ${colors.background};
-  padding: 5px 20px;
-  border-radius: 40px;
+  padding: 0.3rem 1.5rem;
+  border-radius: 2.5rem;
 `;
 
 /////////////////////ICONS
@@ -126,6 +147,10 @@ export const SkillsTooltip = styled(TooltipWithProps)`
       font-size: 14px;
       border-radius: 40px;
 
+      @media ${device.tablet} {
+        margin: 0.8rem;
+      }
+
       & > * {
         color: ${colors.gradientTwo};
       }
@@ -141,8 +166,8 @@ const IconButtonWithProps = React.forwardRef(
 
 export const SkillsIconButton = styled(IconButtonWithProps)`
   && {
-    font-size: 25px;
-    padding: 5px;
+    font-size: 1.7rem;
+    padding: 0.3rem;
     transition: 0.4s;
 
     &:hover {
@@ -168,6 +193,16 @@ export const SkillsIconButton = styled(IconButtonWithProps)`
 
     &:hover svg {
       color: #fff;
+    }
+
+    @media ${device.tablet} {
+      font-size: 2rem;
+      padding: 0.6rem;
+    }
+
+    @media ${device.mobileM} {
+      font-size: 2.5rem;
+      padding: 1rem;
     }
   }
 `;

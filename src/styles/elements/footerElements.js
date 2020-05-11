@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import colors from "../globals/palette";
 import { slideLeft } from "../globals/animations";
+import { device } from "../globals/responsive";
 
 /////////////////////APP BAR
 
@@ -16,6 +17,9 @@ export const FooterAppBar = styled(AppBarWithProps)`
     background: ${colors.background};
     padding: 20px 0;
     z-index: 1;
+    height: 104px;
+    align-items: center;
+    justify-content: center;
 
     &::before {
       position: absolute;
@@ -44,9 +48,9 @@ const CustomButton = (props) => <Button color="inherit" {...props}></Button>;
 export const SocialButton = styled(CustomButton)`
   && {
     border-radius: 50%;
-    min-height: 45px;
-    min-width: 45px;
-    margin: 0 15px;
+    min-height: 2.8rem;
+    min-width: 2.8rem;
+    margin: 0 1rem;
     background: #fff;
     transition: 0.7s;
 
@@ -65,6 +69,6 @@ export const SocialButton = styled(CustomButton)`
   & svg {
     color: ${colors.background};
     transition: 0.7s;
-    font-size: 30px;
+    font-size: 1.9rem;
   }
 `;

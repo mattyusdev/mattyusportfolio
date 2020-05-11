@@ -6,8 +6,8 @@ import { device } from "../globals/responsive";
 
 export const ButtonCurly = styled.span`
   color: ${colors.secondary};
-  font-size: 20px;
-  margin: 0 5px;
+  font-size: 1.25rem;
+  margin: 0 0.3rem;
   position: relative;
   opacity: 0;
   transition: 0.5s;
@@ -84,22 +84,31 @@ export const ButtonMain = styled(ButtonWithProps)`
     ${(props) =>
       props.big &&
       css`
-        font-size: 15px;
-        height: 62px;
-        line-height: 62px;
-        padding: 0 39px;
-        border-radius: 130px;
+        font-size: 0.9rem;
+        height: 3.7rem;
+        line-height: 3.7rem;
+        padding: 0 1.8rem;
+        border-radius: 8rem;
+
+        @media ${device.tablet} {
+          font-size: 1rem;
+          height: 4.2rem;
+          line-height: 4.2rem;
+          padding: 0 2rem;
+          border-radius: 7.8rem;
+        }
       `}
 
     ${(props) =>
       props.small &&
       css`
-        font-size: 8px;
-        height: 33px;
-        line-height: 33px;
-        padding: 0 21px;
-        border-radius: 70px;
+        font-size: 0.5rem;
+        height: 2rem;
+        line-height: 2rem;
+        padding: 0 1.3rem;
+        border-radius: 3.1rem;
       `}
+      
 
       ${(props) =>
         props.nav &&

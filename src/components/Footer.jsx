@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <FooterAppBar>
+    <FooterAppBar component="footer">
       <FooterToolBar>
         <SocialButton component={Link} target="_blank" to="/someurl">
           <FaFacebookF />

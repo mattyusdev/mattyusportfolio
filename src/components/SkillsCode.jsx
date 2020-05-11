@@ -7,6 +7,7 @@ import {
   SkillsIconButton,
   SkillsTooltip,
   SkillsLight,
+  SkillsText,
 } from "../styles/elements/aboutElements";
 
 import {
@@ -35,7 +36,9 @@ export default function SkillsCode() {
         fraction={1}
       >
         <SkillsLi>
-          FRONT <SkillsLight>END</SkillsLight>
+          <SkillsText>
+            FRONT <SkillsLight>END</SkillsLight>
+          </SkillsText>
           <SkillsChip>
             <SkillsTooltip title="HTML5">
               <SkillsIconButton customColor="#e55328">
@@ -76,7 +79,9 @@ export default function SkillsCode() {
         </SkillsLi>
 
         <SkillsLi>
-          BACK <SkillsLight>END</SkillsLight>
+          <SkillsText>
+            BACK <SkillsLight>END</SkillsLight>
+          </SkillsText>
           <SkillsChip>
             <SkillsTooltip title="NodeJS">
               <SkillsIconButton customColor="#77ab43">
@@ -99,7 +104,7 @@ export default function SkillsCode() {
         </SkillsLi>
 
         <SkillsLi>
-          GIT
+          <SkillsText>GIT</SkillsText>
           <SkillsChip>
             <SkillsTooltip title="GIT">
               <SkillsIconButton customColor="#f05033">
@@ -116,7 +121,7 @@ export default function SkillsCode() {
         </SkillsLi>
 
         <SkillsLi>
-          CLOUD
+          <SkillsText>CLOUD</SkillsText>
           <SkillsChip>
             <SkillsTooltip title="Heroku">
               <SkillsIconButton customColor="#8062a7">

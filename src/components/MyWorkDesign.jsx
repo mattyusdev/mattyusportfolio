@@ -10,8 +10,11 @@ import { Link } from "react-router-dom";
 import MyWorkImage from "./MyWorkImage";
 import designImages from "../data/designImages";
 import { CustomFade } from "../styles/globals/animations";
+import useScrollTop from "../hooks/useScrollTop";
 
 export default function MyWorkDesign() {
+  useScrollTop();
+
   return (
     <MyWorkBackground notMain={true}>
       <MyWorkHeader>
