@@ -53,7 +53,12 @@ export const AboutImage = styled.img`
 /////////////////////SKILLS
 
 export const SkillsBackground = styled.div`
-  min-height: calc(80vh - 104px);
+  padding: 10px;
+  min-height: 650px;
+
+  @media ${device.laptop} {
+    min-height: 600px;
+  }
 `;
 
 export const SkillsHeader = styled.div`
