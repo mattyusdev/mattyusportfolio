@@ -107,6 +107,14 @@ export const ButtonMain = styled(ButtonWithProps)`
         line-height: 2rem;
         padding: 0 1.3rem;
         border-radius: 3.1rem;
+
+        @media ${device.tablet} {
+          font-size: 0.9rem;
+          height: 3.8rem;
+          line-height: 3.8rem;
+          padding: 0 2rem;
+          border-radius: 7.8rem;
+        }
       `}
       
 

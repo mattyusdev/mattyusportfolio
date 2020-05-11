@@ -19,7 +19,7 @@ export default function MyWorkDesign() {
     <MyWorkBackground notMain={true}>
       <MyWorkHeader>
         <header>
-          <CustomFade triggerOnce delay={1000} direction="top">
+          <CustomFade triggerOnce delay={700} direction="top">
             <ButtonMain
               component={Link}
               to="/mywork/code"

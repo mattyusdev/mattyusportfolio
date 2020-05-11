@@ -12,7 +12,7 @@ export const AboutBackground = styled.div`
 `;
 
 export const AboutRow = styled.div`
-  /* height: 650px; */
+  min-height: calc(100vh - 104px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +33,7 @@ export const AboutHeader = styled.header`
 
 export const AboutInfo = styled.h4`
   width: 70%;
-  margin: 20px auto;
+  margin: 1.5rem auto;
   text-align: center;
 `;
 
@@ -47,13 +47,13 @@ export const AboutImage = styled.img`
   /* border: 5px solid ${colors.tertiary}; */
   box-shadow: -2px 16px 44px -10px rgba(0, 0, 0, 0.62);
   display: block;
-  margin: 70px auto;
+  margin: 5rem auto;
 `;
 
 /////////////////////SKILLS
 
 export const SkillsBackground = styled.div`
-  height: 650px;
+  min-height: calc(80vh - 104px);
 `;
 
 export const SkillsHeader = styled.div`
@@ -96,8 +96,8 @@ export const SkillsLi = styled.li`
   }
 
   @media ${device.mobileM} {
-    font-size: 3rem;
-    margin: 3rem 0;
+    font-size: 2rem;
+    margin: 2rem 0;
   }
 `;
 
@@ -201,7 +201,7 @@ export const SkillsIconButton = styled(IconButtonWithProps)`
     }
 
     @media ${device.mobileM} {
-      font-size: 2.5rem;
+      font-size: 2rem;
       padding: 1rem;
     }
   }

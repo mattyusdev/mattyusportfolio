@@ -19,7 +19,7 @@ export default function SkillsDesign() {
         direction="left"
         cascade
         damping={0.2}
-        fraction={1}
+        fraction={0.6}
       >
         <SkillsLi>
           <SkillsText>GRAPHIC</SkillsText>

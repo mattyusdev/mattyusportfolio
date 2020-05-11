@@ -16,7 +16,7 @@ export default function Navbar({ location, setIsOpenNav, isOpenNav }) {
     <NavAppBar component="nav" active={location !== "/"}>
       <NavLogo component={Link} to="/" />
 
-      <CustomFade duration={300}>
+      <CustomFade duration={300} direction={!isOpenNav ? "" : "bottom"}>
         <NavLinksFrame isOpenNav={isOpenNav}>
           <NavLinksLi>
             <ButtonMain

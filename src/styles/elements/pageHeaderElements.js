@@ -12,10 +12,10 @@ const PageHeaderFrame = styled.h1`
   ${(props) =>
     props.myWork
       ? css`
-          margin: 20px 0 0 0;
+          margin: 1rem 0 0 0;
         `
       : css`
-          margin: 55px 0 0 0;
+          margin: 4rem 0 0 0;
         `}
 `;
 
@@ -25,7 +25,7 @@ const PageHeaderCurly = styled.span`
   color: ${colors.secondary};
   font-size: 2.5rem;
   font-weight: 400;
-  margin: 0 5px;
+  margin: 0 0.1rem;
   position: relative;
 
   ${(props) =>
@@ -42,7 +42,7 @@ const PageHeaderCurly = styled.span`
 `;
 
 const PageHeaderHr = styled.hr`
-  width: 80px;
+  width: 5rem;
   border: 1.5px solid ${colors.primary};
 
   @media ${device.tablet} {
@@ -52,10 +52,10 @@ const PageHeaderHr = styled.hr`
   ${(props) =>
     props.myWork
       ? css`
-          margin: 20px auto 20px auto;
+          margin: 1.3rem auto 1.3rem auto;
         `
       : css`
-          margin: 20px auto 80px auto;
+          margin: 1.3rem auto 5.5rem auto;
         `}
 `;
 
