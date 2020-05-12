@@ -20,6 +20,7 @@ export const NavLogo = styled(ButtonWithLogo)`
     border-radius: 50%;
     min-width: 3rem;
     line-height: 3rem;
+    z-index: 6;
 
     &:hover {
       transform: scale(1.1);
@@ -32,7 +33,6 @@ export const NavLogo = styled(ButtonWithLogo)`
       @media ${device.tablet} {
         width: 4.125rem;
         line-height: 4.125rem;
-        z-index: 6;
       }
 
       @media ${device.mobileM} {

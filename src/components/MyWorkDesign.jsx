@@ -9,7 +9,7 @@ import { ButtonMain } from "../styles/elements/buttonElements";
 import { Link } from "react-router-dom";
 import MyWorkImage from "./MyWorkImage";
 import designImages from "../data/designImages";
-import { CustomFade } from "../styles/globals/animations";
+import { CustomFade, CustomBounce } from "../styles/globals/animations";
 import useScrollTop from "../hooks/useScrollTop";
 
 export default function MyWorkDesign() {
@@ -19,7 +19,7 @@ export default function MyWorkDesign() {
     <MyWorkBackground notMain={true}>
       <MyWorkHeader>
         <header>
-          <CustomFade triggerOnce delay={700} direction="top">
+          <CustomBounce triggerOnce delay={700}>
             <ButtonMain
               component={Link}
               to="/mywork/code"
@@ -28,7 +28,7 @@ export default function MyWorkDesign() {
             >
               VIEW CODE
             </ButtonMain>
-          </CustomFade>
+          </CustomBounce>
 
           <PageHeader myWork={true} text="MY DESIGN PROJECTS" />
         </header>

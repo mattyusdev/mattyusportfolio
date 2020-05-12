@@ -13,7 +13,11 @@ import {
 } from "../styles/elements/homeElements";
 import { ButtonMain } from "../styles/elements/buttonElements";
 import { Link } from "react-router-dom";
-import { CustomFade, CustomZoom } from "../styles/globals/animations";
+import {
+  CustomFade,
+  CustomZoom,
+  CustomBounce,
+} from "../styles/globals/animations";
 
 export default function Home() {
   return (
@@ -41,10 +45,12 @@ export default function Home() {
             WEB <LightFont>X</LightFont> FULLSTACK <LightFont>X</LightFont>{" "}
             DESIGN
           </WebHeader>
+        </CustomFade>
+        <CustomBounce delay={2400}>
           <ButtonMain component={Link} to="/mywork" active={true}>
             MY WORK
           </ButtonMain>
-        </CustomFade>
+        </CustomBounce>
       </HomeHeader>
     </HomeBackground>
   );

@@ -14,6 +14,7 @@ export const AboutBackground = styled.div`
 export const AboutRow = styled.div`
   min-height: calc(100vh - 104px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -26,10 +27,6 @@ export const AboutRow = styled.div`
 `;
 
 /////////////////////ABOUT
-
-export const AboutHeader = styled.header`
-  height: 100%;
-`;
 
 export const AboutInfo = styled.h4`
   width: 70%;

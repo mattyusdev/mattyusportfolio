@@ -14,7 +14,7 @@ import PageHeader from "../styles/elements/pageHeaderElements";
 import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
 import SkillsCode from "./SkillsCode";
 import SkillsDesign from "./SkillsDesign";
-import { CustomFade } from "../styles/globals/animations";
+import { CustomFade, CustomBounce } from "../styles/globals/animations";
 import useScrollTop from "../hooks/useScrollTop";
 
 export default function AboutMe() {
@@ -25,28 +25,26 @@ export default function AboutMe() {
   return (
     <AboutBackground>
       <AboutRow background={true}>
-        <AboutHeader>
-          <PageHeader text="ABOUT ME" />
-          <CustomFade triggerOnce direction="top" cascade fraction={1}>
-            <AboutInfo>
-              Adsdsatur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-              gravida. Risus commodo viverra maecenas accumsan lacus vel
-              facilisis.
-            </AboutInfo>
-            <AboutInfo>
-              I’ve used: NodeJS, React, Formik, Material-UI(custom),
-              Styled-Components, React-Awesome-Reveal and{" "}
-              <AboutHeart>❤</AboutHeart> for this website.
-            </AboutInfo>
-            <AboutImage src="/about_img.jpg" />
-          </CustomFade>
-        </AboutHeader>
+        <PageHeader text="ABOUT ME" />
+        <CustomFade triggerOnce direction="top" cascade>
+          <AboutInfo>
+            Adsdsatur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+            gravida. Risus commodo viverra maecenas accumsan lacus vel
+            facilisis.
+          </AboutInfo>
+          <AboutInfo>
+            I’ve used: NodeJS, React, Formik, Material-UI(custom),
+            Styled-Components, React-Awesome-Reveal and{" "}
+            <AboutHeart>❤</AboutHeart> for this website.
+          </AboutInfo>
+          <AboutImage src="/about_img.jpg" />
+        </CustomFade>
       </AboutRow>
 
       <SkillsBackground>
-        <CustomFade triggerOnce direction="top" fraction={1}>
-          <SkillsHeader>
+        <SkillsHeader>
+          <CustomBounce triggerOnce>
             <ButtonMain
               active={isCode}
               big={true}
@@ -57,7 +55,8 @@ export default function AboutMe() {
               VIEW CODE
               <ButtonCurly right={true}>{"}"}</ButtonCurly>
             </ButtonMain>
-
+          </CustomBounce>
+          <CustomBounce triggerOnce>
             <ButtonMain
               active={!isCode}
               big={true}
@@ -68,8 +67,8 @@ export default function AboutMe() {
               DESIGN TECH'S
               <ButtonCurly right={true}>{"}"}</ButtonCurly>
             </ButtonMain>
-          </SkillsHeader>
-        </CustomFade>
+          </CustomBounce>
+        </SkillsHeader>
 
         <SkillsMain>{isCode ? <SkillsCode /> : <SkillsDesign />}</SkillsMain>
       </SkillsBackground>

@@ -9,24 +9,22 @@ import {
 import PageHeader from "../styles/elements/pageHeaderElements";
 import { AiOutlineMail } from "react-icons/ai";
 import Form from "./Form";
-import { CustomFade } from "../styles/globals/animations";
+import useScrollTop from "../hooks/useScrollTop";
 
 export default function Contact() {
+  useScrollTop();
+
   return (
     <>
       <ContactBackground>
-        <ContactRow top={true}>
-          <PageHeader text="GET IN TOUCH" />
-        </ContactRow>
+        <PageHeader text="GET IN TOUCH" />
 
         <Form />
 
-        <ContactRow>
-          <ContactMail>
-            <AiOutlineMail />
-            matan@mattyus.com
-          </ContactMail>
-        </ContactRow>
+        <ContactMail>
+          <AiOutlineMail />
+          matan@mattyus.com
+        </ContactMail>
       </ContactBackground>
     </>
   );

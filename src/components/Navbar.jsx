@@ -14,7 +14,7 @@ import { CustomFade } from "../styles/globals/animations";
 export default function Navbar({ location, setIsOpenNav, isOpenNav }) {
   return (
     <NavAppBar component="nav" active={location !== "/"}>
-      <NavLogo component={Link} to="/" />
+      <NavLogo component={Link} to="/" onClick={() => setIsOpenNav(false)} />
 
       <CustomFade duration={300} direction={!isOpenNav ? "" : "bottom"}>
         <NavLinksFrame isOpenNav={isOpenNav}>

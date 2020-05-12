@@ -3,13 +3,16 @@ import styled, { css } from "styled-components";
 import colors from "../globals/palette";
 import { TextField, InputAdornment } from "@material-ui/core";
 import { Form } from "formik";
+import { device } from "../globals/responsive";
 
 export const ContactBackground = styled.div`
   min-height: calc(100vh - 208px);
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: relative;
+  background: url("/Home_.jpg") no-repeat center;
+  background-size: cover;
 `;
 
 export const ContactRow = styled.div`
@@ -34,25 +37,56 @@ export const ContactRow = styled.div`
 `;
 
 export const ContactForm = styled(Form)`
-  z-index: 1;
-  height: 330px;
-  width: 500px;
-  border-radius: 80px;
+  height: 20rem;
+  width: 30rem;
+  border-radius: 5rem;
   background: ${colors.background};
   text-align: center;
-  padding: 50px 30px;
+  padding: 3rem 2rem;
 
   && {
     button {
-      margin: 60px;
+      margin: 2rem;
+
+      svg {
+        margin: 3px;
+      }
+
+      @media ${device.tablet} {
+        margin: 3rem;
+      }
+      @media ${device.mobileM} {
+        margin: 4.5rem;
+      }
     }
+  }
+
+  @media ${device.tablet} {
+    height: 25rem;
+    width: 37rem;
+    border-radius: 6rem;
+    padding: 3.5rem 2.25rem;
+  }
+
+  @media ${device.mobileM} {
+    height: 30rem;
+    width: 37rem;
+    border-radius: 6rem;
+    padding: 3.5rem 2.25rem;
+  }
+
+  @media ${device.mobileS} {
+    height: 30rem;
+    width: 30rem;
+    border-radius: 6rem;
+    padding: 3.5rem 2.25rem;
   }
 `;
 
 const CustomTextField = styled(TextField)`
   && {
     width: 85%;
-    height: 60px;
+    height: 4rem;
     p {
       font-size: 12px;
     }
@@ -67,10 +101,17 @@ const CustomTextField = styled(TextField)`
           color: orangered;
         `}
     }
+    @media ${device.tablet} {
+      height: 5rem;
+    }
+
+    @media ${device.mobileM} {
+      height: 5.5rem;
+    }
   }
 
   .MuiInput-underline:before {
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #fff;
   }
 
   && .MuiInput-underline:hover:before {
@@ -82,7 +123,7 @@ const CustomTextField = styled(TextField)`
     ${(props) =>
       props.error
         ? css`
-            border-bottom: 2px solid orangered;
+            border-bottom: 1px solid orangered;
           `
         : css`
             border-bottom: 2px solid ${colors.primary};
@@ -105,7 +146,8 @@ export const ContactMail = styled.h4`
   text-align: center;
   display: flex;
   align-items: center;
-  margin: 50px;
+  font-size: 1rem;
+  margin: 4rem;
   letter-spacing: 2px;
   & > * {
     margin-right: 7px;

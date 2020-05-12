@@ -8,7 +8,8 @@ import { ButtonMain } from "../styles/elements/buttonElements";
 import { BsPerson, BsPencilSquare } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiMessage2Line } from "react-icons/ri";
-import { CustomFade } from "../styles/globals/animations";
+import { CustomFade, CustomBounce } from "../styles/globals/animations";
+import { FaRegPaperPlane } from "react-icons/fa";
 
 const initial = {
   name: "",
@@ -83,7 +84,7 @@ export default function Form() {
 
               <Field
                 multiline
-                rowsMax={4}
+                rowsMax={3}
                 name="message"
                 placeholder="Message..."
                 as={ContactField}
@@ -96,11 +97,12 @@ export default function Form() {
               </Field>
             </CustomFade>
 
-            <CustomFade delay={1600} direction="bottom">
+            <CustomBounce delay={1200}>
               <ButtonMain type="submit" active={true}>
                 SEND
+                <FaRegPaperPlane />
               </ButtonMain>
-            </CustomFade>
+            </CustomBounce>
           </ContactForm>
         </CustomFade>
       )}

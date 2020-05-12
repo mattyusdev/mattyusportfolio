@@ -5,13 +5,13 @@ import {
 } from "../styles/elements/myWorkElements";
 import { Link } from "react-router-dom";
 import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
-import { CustomFade } from "../styles/globals/animations";
+import { CustomBounce } from "../styles/globals/animations";
 
 export default function MyWork() {
   return (
     <MyWorkBackground>
       <MyWorkColumn>
-        <CustomFade direction="top">
+        <CustomBounce>
           <ButtonMain
             active={true}
             big={true}
@@ -22,10 +22,10 @@ export default function MyWork() {
             VIEW CODE
             <ButtonCurly right={true}>{"}"}</ButtonCurly>
           </ButtonMain>
-        </CustomFade>
+        </CustomBounce>
       </MyWorkColumn>
       <MyWorkColumn background={true}>
-        <CustomFade direction="top">
+        <CustomBounce>
           <ButtonMain
             active={true}
             big={true}
@@ -36,7 +36,7 @@ export default function MyWork() {
             VIEW DESIGN
             <ButtonCurly right={true}>{"}"}</ButtonCurly>
           </ButtonMain>
-        </CustomFade>
+        </CustomBounce>
       </MyWorkColumn>
     </MyWorkBackground>
   );
