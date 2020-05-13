@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import colors from "../globals/palette";
 import { device } from "../globals/responsive";
+import { svgUrl } from "./svg";
 
 /////////////////////BACKGROUND
 
