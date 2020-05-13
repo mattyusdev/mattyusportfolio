@@ -33,11 +33,14 @@ export const MyWorkColumn = styled.div`
   }
 
   ${(props) =>
-    props.background &&
-    css`
-      background: url("/mattyusbackground_noeffects.svg") no-repeat center;
-      background-size: cover;
-    `}
+    props.background
+      ? css`
+          background: url("/mattyusbackground_noeffects.svg") no-repeat center;
+          background-size: cover;
+        `
+      : css`
+          background: ${colors.tertiary};
+        `}
 `;
 
 export const MyWorkHeader = styled.div`

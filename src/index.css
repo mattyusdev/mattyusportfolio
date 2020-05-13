@@ -13,7 +13,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #180852;
+  background: linear-gradient(to top, #1c0e57 31%, #130a4e 55%, #020222 100%);
   box-sizing: border-box;
   font-family: "Gill Sans MT2", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

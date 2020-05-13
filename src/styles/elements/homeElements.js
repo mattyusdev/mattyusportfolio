@@ -1,13 +1,10 @@
 import styled, { css } from "styled-components";
 import colors from "../globals/palette";
 import { device } from "../globals/responsive";
-import { svgUrl } from "./svg";
 
 /////////////////////BACKGROUND
 
 export const HomeBackground = styled.div`
-  background: linear-gradient(to top, #1c0e57 31%, #130a4e 55%, #020222 100%);
-
   ${(props) =>
     props.timeStamp &&
     css`
