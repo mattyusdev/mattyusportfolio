@@ -6,6 +6,8 @@ import { svgUrl } from "./svg";
 /////////////////////BACKGROUND
 
 export const HomeBackground = styled.div`
+  background: linear-gradient(to top, #1c0e57 31%, #130a4e 55%, #020222 100%);
+
   ${(props) =>
     props.timeStamp &&
     css`
@@ -14,7 +16,6 @@ export const HomeBackground = styled.div`
     `}
 
   background-size: cover;
-
   height: 100vh;
   width: 100vw;
   display: flex;
