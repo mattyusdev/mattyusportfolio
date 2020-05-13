@@ -21,7 +21,7 @@ export const AboutRow = styled.div`
   ${(props) =>
     props.background &&
     css`
-      background: url("/Home_.jpg") no-repeat center fixed;
+      background: url("/mattyusbackground_noeffects.svg") no-repeat center fixed;
       background-size: cover;
     `}
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { AppBar, Button, Toolbar } from "@material-ui/core";
+import { AppBar, Button } from "@material-ui/core";
 import SvgLogo from "../../svg/SvgLogo";
 import colors from "../globals/palette";
 import { slideRight } from "../globals/animations";

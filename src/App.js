@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <GlobalStyle isOpenNav={isOpenNav} />
+      <GlobalStyle isHome={location === "/"} isOpenNav={isOpenNav} />
       <Navbar
         location={location}
         isOpenNav={isOpenNav}

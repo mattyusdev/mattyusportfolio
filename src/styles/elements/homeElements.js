@@ -1,19 +1,24 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import colors from "../globals/palette";
-import { slideDown, width } from "../globals/animations";
 import { device } from "../globals/responsive";
 
 /////////////////////BACKGROUND
 
 export const HomeBackground = styled.div`
-  background: url("/Home_.jpg") no-repeat center fixed;
+  ${(props) =>
+    props.timeStamp &&
+    css`
+      background: url("/mattyusbackground_effects.svg?${props.timeStamp}") no-repeat center
+        fixed;
+    `}
+
+  background-size: cover;
+
   height: 100vh;
   width: 100vw;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* animation: ${slideDown} 0.3s ease-in; */
 `;
 
 /////////////////////HEADER

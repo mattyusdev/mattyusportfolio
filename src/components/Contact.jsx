@@ -1,10 +1,7 @@
 import React from "react";
 import {
   ContactBackground,
-  ContactRow,
-  ContactForm,
   ContactMail,
-  ContactTextField,
 } from "../styles/elements/contactElements";
 import PageHeader from "../styles/elements/pageHeaderElements";
 import { AiOutlineMail } from "react-icons/ai";

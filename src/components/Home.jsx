@@ -20,8 +20,10 @@ import {
 } from "../styles/globals/animations";
 
 export default function Home() {
+  const timeStamp = new Date().getTime();
+
   return (
-    <HomeBackground>
+    <HomeBackground timeStamp={timeStamp}>
       <HomeHeader>
         <CustomFade direction="top" delay={300}>
           <IamHeader>

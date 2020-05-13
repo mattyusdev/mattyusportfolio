@@ -8,7 +8,6 @@ import {
   SkillsText,
 } from "../styles/elements/aboutElements";
 import { DiPhotoshop, DiIllustrator } from "react-icons/di";
-import Fade from "react-reveal/Fade";
 import { CustomFade } from "../styles/globals/animations";
 
 export default function SkillsDesign() {

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import colors from "../globals/palette";
 import { slideLeft } from "../globals/animations";
-import { device } from "../globals/responsive";
 
 /////////////////////APP BAR
 

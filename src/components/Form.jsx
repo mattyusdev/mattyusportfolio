@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Field, useField } from "formik";
+import { Formik, Field } from "formik";
 import * as Yup from "yup";
 
 import { ContactForm, ContactField } from "../styles/elements/contactElements";
