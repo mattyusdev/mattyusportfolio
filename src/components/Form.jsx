@@ -49,7 +49,7 @@ export default function Form() {
 
   const formSubmit = (values) => {
     setIsSent({ ...isSent, loading: true });
-    Axios.post("http://localhost:1000/contact", values)
+    Axios.post("/contact", values)
       .then((data) => setIsSent({ ...isSent, sent: true, loading: false }))
       .catch((error) => setIsSent({ ...isSent, error: true, loading: false }));
   };
