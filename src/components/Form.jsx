@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 
-import { ContactForm, ContactField } from "../styles/elements/contactElements";
+import {
+  ContactForm,
+  ContactField,
+  ContactSent,
+  ContactErrorMessage,
+  ContactSvgSpinner,
+} from "../styles/elements/contactElements";
 import { ButtonMain } from "../styles/elements/buttonElements";
 
 import { BsPerson, BsPencilSquare } from "react-icons/bs";
@@ -10,17 +16,13 @@ import { AiOutlineMail } from "react-icons/ai";
 import { RiMessage2Line } from "react-icons/ri";
 import { CustomFade, CustomBounce } from "../styles/globals/animations";
 import { FaRegPaperPlane } from "react-icons/fa";
+import Axios from "axios";
 
 const initial = {
   name: "",
   email: "",
   subject: "",
   message: "",
-};
-
-const formSubmit = (values, { resetForm }) => {
-  console.log(values);
-  resetForm();
 };
 
 const validationSchema = Yup.object({
@@ -39,70 +41,123 @@ const validationSchema = Yup.object({
 });
 
 export default function Form() {
+  const [isSent, setIsSent] = useState({
+    sent: false,
+    loading: false,
+    error: false,
+  });
+
+  const formSubmit = (values) => {
+    setIsSent({ ...isSent, loading: true });
+    Axios.post("http://localhost:1000/contact", values)
+      .then((data) => setIsSent({ ...isSent, sent: true, loading: false }))
+      .catch((error) => setIsSent({ ...isSent, error: true, loading: false }));
+  };
+
   return (
     <Formik
       initialValues={initial}
       onSubmit={formSubmit}
       validationSchema={validationSchema}
     >
-      {({ values, errors, touched }) => (
+      {({ errors, touched }) => (
         <CustomFade>
           <ContactForm>
-            <CustomFade cascade duration={700} damping={0.4} direction="left">
-              <Field
-                name="name"
-                placeholder="Name..."
-                as={ContactField}
-                error={errors.name && touched.name ? true : false}
-                helperText={errors.name && touched.name ? errors.name : null}
-              >
-                <BsPerson />
-              </Field>
+            {!isSent.sent ? (
+              isSent.loading ? (
+                <ContactSent>
+                  <ContactSvgSpinner type="image/svg+xml" data="spinner.svg" />
+                  <h2>Sending . . .</h2>
+                </ContactSent>
+              ) : (
+                <>
+                  {isSent.error && (
+                    <ContactErrorMessage>
+                      An error occurred, please try again later.
+                    </ContactErrorMessage>
+                  )}
+                  <CustomFade
+                    cascade
+                    duration={700}
+                    damping={0.4}
+                    direction="left"
+                  >
+                    <Field
+                      name="name"
+                      placeholder="Name..."
+                      as={ContactField}
+                      error={errors.name && touched.name ? true : false}
+                      helperText={
+                        errors.name && touched.name ? errors.name : null
+                      }
+                    >
+                      <BsPerson />
+                    </Field>
 
-              <Field
-                type="email"
-                name="email"
-                placeholder="Email..."
-                as={ContactField}
-                error={errors.email && touched.email ? true : false}
-                helperText={errors.email && touched.email ? errors.email : null}
-              >
-                <AiOutlineMail />
-              </Field>
+                    <Field
+                      type="email"
+                      name="email"
+                      placeholder="Email..."
+                      as={ContactField}
+                      error={errors.email && touched.email ? true : false}
+                      helperText={
+                        errors.email && touched.email ? errors.email : null
+                      }
+                    >
+                      <AiOutlineMail />
+                    </Field>
 
-              <Field
-                name="subject"
-                placeholder="Subject..."
-                as={ContactField}
-                error={errors.subject && touched.subject ? true : false}
-                helperText={
-                  errors.subject && touched.subject ? errors.subject : null
-                }
-              >
-                <BsPencilSquare />
-              </Field>
+                    <Field
+                      name="subject"
+                      placeholder="Subject..."
+                      as={ContactField}
+                      error={errors.subject && touched.subject ? true : false}
+                      helperText={
+                        errors.subject && touched.subject
+                          ? errors.subject
+                          : null
+                      }
+                    >
+                      <BsPencilSquare />
+                    </Field>
 
-              <Field
-                multiline
-                rowsMax={3}
-                name="message"
-                placeholder="Message..."
-                as={ContactField}
-                error={errors.message && touched.message ? true : false}
-                helperText={
-                  errors.message && touched.message ? errors.message : null
-                }
-              >
-                <RiMessage2Line />
-              </Field>
-            </CustomFade>
+                    <Field
+                      multiline
+                      rowsMax={3}
+                      name="message"
+                      placeholder="Message..."
+                      as={ContactField}
+                      error={errors.message && touched.message ? true : false}
+                      helperText={
+                        errors.message && touched.message
+                          ? errors.message
+                          : null
+                      }
+                    >
+                      <RiMessage2Line />
+                    </Field>
+                  </CustomFade>
 
-            <CustomBounce delay={1200}>
-              <ButtonMain type="submit" active={true}>
-                SEND
-                <FaRegPaperPlane />
-              </ButtonMain>
-            </CustomBounce>
+                  <CustomBounce delay={1200}>
+                    <ButtonMain type="submit" active={true}>
+                      SEND
+                      <FaRegPaperPlane />
+                    </ButtonMain>
+                  </CustomBounce>
+                </>
+              )
+            ) : (
+              <ContactSent>
+                <CustomFade cascade direction="top">
+                  <FaRegPaperPlane />
+
+                  <h1>Message Sent!</h1>
+                  <h3>
+                    Thank you <span>❤</span>
+                  </h3>
+                </CustomFade>
+              </ContactSent>
+            )}
           </ContactForm>
         </CustomFade>
       )}

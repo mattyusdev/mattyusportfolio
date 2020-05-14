@@ -37,7 +37,7 @@ export const ContactRow = styled.div`
 `;
 
 export const ContactForm = styled(Form)`
-  height: 20rem;
+  height: 23rem;
   width: 30rem;
   border-radius: 5rem;
   background: ${colors.background};
@@ -46,37 +46,34 @@ export const ContactForm = styled(Form)`
 
   && {
     button {
-      margin: 2rem;
+      margin: 3.5rem;
 
       svg {
         margin: 3px;
       }
 
       @media ${device.tablet} {
-        margin: 3rem;
-      }
-      @media ${device.mobileM} {
-        margin: 4.5rem;
+        margin: 5rem;
       }
     }
   }
 
   @media ${device.tablet} {
-    height: 25rem;
+    height: 28rem;
     width: 37rem;
     border-radius: 6rem;
     padding: 3.5rem 2.25rem;
   }
 
   @media ${device.mobileM} {
-    height: 30rem;
+    height: 33rem;
     width: 37rem;
     border-radius: 6rem;
     padding: 3.5rem 2.25rem;
   }
 
   @media ${device.mobileS} {
-    height: 30rem;
+    height: 34rem;
     width: 30rem;
     border-radius: 6rem;
     padding: 3.5rem 2.25rem;
@@ -88,12 +85,12 @@ const CustomTextField = styled(TextField)`
     width: 85%;
     height: 4rem;
     p {
-      font-size: 12px;
+      font-size: 1rem;
     }
     * {
       color: #fff;
       margin: 2px 5px 3px 0;
-      font-size: 15px;
+      font-size: 1rem;
 
       ${(props) =>
         props.error &&
@@ -103,10 +100,16 @@ const CustomTextField = styled(TextField)`
     }
     @media ${device.tablet} {
       height: 5rem;
+      p {
+        font-size: 1.3rem;
+      }
+      * {
+        font-size: 1.5rem;
+      }
     }
 
     @media ${device.mobileM} {
-      height: 5.5rem;
+      height: 6rem;
     }
   }
 
@@ -141,6 +144,40 @@ export const ContactField = ({ children, ...props }) => (
     }}
   />
 );
+
+export const ContactErrorMessage = styled.h4`
+  color: orangered;
+  margin: 0;
+`;
+
+export const ContactSent = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  svg {
+    font-size: 3rem;
+    color: ${colors.primary};
+  }
+
+  span {
+    color: ${colors.secondary};
+  }
+`;
+
+export const ContactSvgSpinner = styled.object`
+  height: 4rem;
+`;
 
 export const ContactMail = styled.h4`
   text-align: center;
