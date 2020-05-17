@@ -9,6 +9,7 @@ import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import MyWorkDesign from "./components/MyWorkDesign";
 import { GlobalStyle } from "./styles/globals/responsive";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function App() {
   const location = useLocation().pathname;
@@ -16,7 +17,15 @@ function App() {
   const [isOpenNav, setIsOpenNav] = useState(false);
 
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Mattyus | Full Stack Web Developer & Graphic Designer</title>
+        <meta
+          name="description"
+          content="I'm Mattyus, Full Stack Web Developer and Graphic Designer, This is My Portfolio"
+        />
+      </Helmet>
+
       <GlobalStyle isHome={location === "/"} isOpenNav={isOpenNav} />
       <Navbar
         location={location}
@@ -40,7 +49,7 @@ function App() {
       </Switch>
 
       {location !== "/" ? <Footer /> : null}
-    </>
+    </HelmetProvider>
   );
 }
 

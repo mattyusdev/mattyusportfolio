@@ -11,12 +11,17 @@ import MyWorkImage from "./MyWorkImage";
 import designImages from "../data/designImages";
 import { CustomFade, CustomBounce } from "../styles/globals/animations";
 import useScrollTop from "../hooks/useScrollTop";
+import { Helmet } from "react-helmet-async";
 
 export default function MyWorkDesign() {
   useScrollTop();
 
   return (
     <MyWorkBackground notMain={true}>
+      <Helmet>
+        <title>Mattyus | My Design Projects</title>
+      </Helmet>
+
       <MyWorkHeader>
         <header>
           <CustomBounce triggerOnce delay={700}>

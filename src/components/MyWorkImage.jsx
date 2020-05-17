@@ -9,21 +9,29 @@ import {
   MyWorkImageInfo,
 } from "../styles/elements/myWorkElements";
 import { ButtonMain } from "../styles/elements/buttonElements";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function MyWorkImage({ data }) {
   return (
     <MyWorkImageFrame>
-      <MyWorkImageElement src={data.img} />
+      <MyWorkImageElement src={data.img} alt={data.alt} />
       <MyWorkImageOverlay top={data.top}>
         <MyWorkImageHeader>
           <MyWorkImageTitle>{data.title}</MyWorkImageTitle>
           <MyWorkImageHr />
           <MyWorkImageInfo>{data.info}</MyWorkImageInfo>
           {/* DESCRIPTION */}
-          <ButtonMain active={true} small={true} component={Link} to="/asd">
-            VIEW
-          </ButtonMain>
+          {!data.urlDisabled ? (
+            <ButtonMain
+              active={true}
+              small={true}
+              component="a"
+              href={data.url}
+              target="_blank"
+            >
+              VIEW
+            </ButtonMain>
+          ) : null}
         </MyWorkImageHeader>
       </MyWorkImageOverlay>
     </MyWorkImageFrame>

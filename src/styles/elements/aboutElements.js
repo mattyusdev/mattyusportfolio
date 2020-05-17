@@ -38,13 +38,49 @@ export const AboutHeart = styled.span`
   color: crimson;
 `;
 
-export const AboutImage = styled.img`
-  width: 13rem;
-  border-radius: 50%;
-  /* border: 5px solid ${colors.tertiary}; */
-  box-shadow: -2px 16px 44px -10px rgba(0, 0, 0, 0.62);
-  display: block;
+export const AboutImageFrame = styled.div`
   margin: 5rem auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -2px 16px 44px -10px rgba(0, 0, 0, 0.62);
+
+  &,
+  > * {
+    width: 13rem;
+    border-radius: 50%;
+    height: 100%;
+  }
+
+  :hover div {
+    transform: translate(0, 0);
+  }
+`;
+
+export const AboutImage = styled.img`
+    display: block;
+  /* border: 5px solid ${colors.tertiary}; */
+`;
+
+export const AboutImageOverlay = styled.div`
+  background: linear-gradient(
+    to right,
+    ${colors.gradientOne},
+    ${colors.gradientTwo}
+  );
+  position: absolute;
+  transition: 0.4s;
+  top: 0;
+  left: 0;
+  transform: translate(0, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const AboutImageOverlayText = styled.h3`
+  font-size: 1rem;
+  text-align: center;
+  width: 70%;
 `;
 
 /////////////////////SKILLS

@@ -44,7 +44,7 @@ export default function Home() {
         </CustomZoom>
         <CustomFade direction="bottom" delay={2000}>
           <WebHeader>
-            WEB <LightFont>X</LightFont> FULLSTACK <LightFont>X</LightFont>{" "}
+            WEB <LightFont>X</LightFont> FULL STACK <LightFont>X</LightFont>{" "}
             DESIGN
           </WebHeader>
         </CustomFade>

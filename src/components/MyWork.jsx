@@ -6,10 +6,15 @@ import {
 import { Link } from "react-router-dom";
 import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
 import { CustomBounce } from "../styles/globals/animations";
+import { Helmet } from "react-helmet-async";
 
 export default function MyWork() {
   return (
     <MyWorkBackground>
+      <Helmet>
+        <title>Mattyus | My Work</title>
+      </Helmet>
+
       <MyWorkColumn>
         <CustomBounce>
           <ButtonMain

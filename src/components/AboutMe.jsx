@@ -8,6 +8,9 @@ import {
   SkillsHeader,
   SkillsMain,
   AboutRow,
+  AboutImageFrame,
+  AboutImageOverlay,
+  AboutImageOverlayText,
 } from "../styles/elements/aboutElements";
 import PageHeader from "../styles/elements/pageHeaderElements";
 import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
@@ -15,6 +18,7 @@ import SkillsCode from "./SkillsCode";
 import SkillsDesign from "./SkillsDesign";
 import { CustomFade, CustomBounce } from "../styles/globals/animations";
 import useScrollTop from "../hooks/useScrollTop";
+import { Helmet } from "react-helmet-async";
 
 export default function AboutMe() {
   const [isCode, setIsCode] = useState(true);
@@ -23,6 +27,10 @@ export default function AboutMe() {
 
   return (
     <AboutBackground>
+      <Helmet>
+        <title>Mattyus | About Me</title>
+      </Helmet>
+
       <AboutRow background={true}>
         <PageHeader text="ABOUT ME" />
         <CustomFade triggerOnce direction="top" cascade>
@@ -37,7 +45,16 @@ export default function AboutMe() {
             Styled-Components, React-Awesome-Reveal and{" "}
             <AboutHeart>❤</AboutHeart> for this website.
           </AboutInfo>
-          <AboutImage src="/about_img.jpg" />
+        </CustomFade>
+        <CustomFade delay={600} direction="top">
+          <AboutImageFrame>
+            <AboutImageOverlay>
+              <AboutImageOverlayText>
+                Me and My Workspace ;)
+              </AboutImageOverlayText>
+            </AboutImageOverlay>
+            <AboutImage src="/about_img.jpg" alt="Me and My Workspace ;)" />
+          </AboutImageFrame>
         </CustomFade>
       </AboutRow>
 
@@ -51,7 +68,7 @@ export default function AboutMe() {
             >
               {" "}
               <ButtonCurly left={true}>{"{"}</ButtonCurly>
-              VIEW CODE
+              CODE TECH'S
               <ButtonCurly right={true}>{"}"}</ButtonCurly>
             </ButtonMain>
           </CustomBounce>

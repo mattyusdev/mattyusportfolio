@@ -7,12 +7,17 @@ import PageHeader from "../styles/elements/pageHeaderElements";
 import { AiOutlineMail } from "react-icons/ai";
 import Form from "./Form";
 import useScrollTop from "../hooks/useScrollTop";
+import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
   useScrollTop();
 
   return (
     <>
+      <Helmet>
+        <title>Mattyus | Get In Touch</title>
+      </Helmet>
+
       <ContactBackground>
         <PageHeader text="GET IN TOUCH" />
 
