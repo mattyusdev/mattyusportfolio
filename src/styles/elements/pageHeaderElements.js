@@ -55,7 +55,7 @@ const PageHeaderHr = styled.hr`
           margin: 1.3rem auto 1.3rem auto;
         `
       : css`
-          margin: 1.3rem auto 5.5rem auto;
+          margin: 1.3rem auto 4rem auto;
         `}
 `;
 

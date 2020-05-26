@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import MyWorkDesign from "./components/MyWorkDesign";
 import { GlobalStyle } from "./styles/globals/responsive";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import MyWorkCode from "./components/MyWorkCode";
 
 function App() {
   const location = useLocation().pathname;
@@ -38,6 +39,7 @@ function App() {
 
         <Route exact path="/mywork" component={MyWork} />
         <Route exact path="/mywork/design" component={MyWorkDesign} />
+        <Route exact path="/mywork/code" component={MyWorkCode} />
 
         <Route exact path="/about" component={AboutMe} />
 

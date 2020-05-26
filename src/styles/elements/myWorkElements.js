@@ -61,9 +61,18 @@ export const MyWorkImagesRow = styled.main`
 
 export const MyWorkImageFrame = styled.div`
   display: flex;
-  width: 25%;
   position: relative;
   overflow: hidden;
+
+  ${(props) =>
+    props.code
+      ? css`
+          width: calc(100% / 3);
+        `
+      : css`
+          width: 25%;
+        `}
+
 
   @media ${device.laptopS} {
     width: 50%;
@@ -94,6 +103,7 @@ export const MyWorkImageOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   ${(props) =>
     props.top
@@ -122,6 +132,11 @@ export const MyWorkImageTitle = styled.h2`
   @media ${device.tablet} {
     font-size: 2rem;
   }
+
+  @media ${device.mobileS} {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
 `;
 
 export const MyWorkImageHr = styled.hr`
@@ -138,8 +153,19 @@ export const MyWorkImageInfo = styled.h3`
   letter-spacing: 3px;
   font-weight: 400;
   opacity: 0.6;
+  margin: 1rem auto;
+
+  ${(props) =>
+    props.code &&
+    css`
+      width: 60%;
+    `}
 
   @media ${device.tablet} {
     font-size: 1.2rem;
+  }
+
+  @media ${device.mobileS} {
+    font-size: 1rem;
   }
 `;

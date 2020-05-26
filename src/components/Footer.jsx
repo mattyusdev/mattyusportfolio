@@ -4,28 +4,21 @@ import {
   SocialButton,
   FooterToolBar,
 } from "../styles/elements/footerElements";
-import { FaInstagram, FaFacebookF, FaTwitter, FaBehance } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { footerIcons } from "../data/footer/footerIconsData";
 
 export default function Footer() {
   return (
     <FooterAppBar component="footer">
       <FooterToolBar>
-        <SocialButton component={Link} target="_blank" to="/someurl">
-          <FaFacebookF />
-        </SocialButton>
-
-        <SocialButton component={Link} target="_blank" to="/someurl">
-          <FaInstagram />
-        </SocialButton>
-
-        <SocialButton component={Link} target="_blank" to="/someurl">
-          <FaTwitter />
-        </SocialButton>
-
-        <SocialButton component={Link} target="_blank" to="/someurl">
-          <FaBehance />
-        </SocialButton>
+        {footerIcons.map((i) => (
+          <SocialButton
+            key={i.id}
+            IconComponent={i.IconComponent}
+            component="a"
+            target="_blank"
+            href={i.url}
+          />
+        ))}
       </FooterToolBar>
     </FooterAppBar>
   );

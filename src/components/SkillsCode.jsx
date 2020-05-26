@@ -4,26 +4,18 @@ import {
   SkillsLi,
   SkillsUl,
   SkillsChip,
-  SkillsIconButton,
-  SkillsTooltip,
   SkillsLight,
   SkillsText,
 } from "../styles/elements/aboutElements";
 
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaSass,
-  FaJs,
-  FaReact,
-  FaAngular,
-  FaNodeJs,
-  FaGitAlt,
-  FaGithub,
-  FaDigitalOcean,
-} from "react-icons/fa";
-import { DiMongodb, DiHeroku, DiMysql } from "react-icons/di";
 import { CustomFade } from "../styles/globals/animations";
+import {
+  frontEndData,
+  backEndData,
+  gitData,
+  cloudData,
+} from "../data/about/codeAboutData";
+import { TooltipIcon } from "../styles/globals/tooltipIcons";
 
 export default function SkillsCode() {
   return (
@@ -40,41 +32,9 @@ export default function SkillsCode() {
             FRONT <SkillsLight>END</SkillsLight>
           </SkillsText>
           <SkillsChip>
-            <SkillsTooltip title="HTML5">
-              <SkillsIconButton customColor="#e55328">
-                <FaHtml5 />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="CSS3">
-              <SkillsIconButton customColor="#0067b3">
-                <FaCss3Alt />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="SASS">
-              <SkillsIconButton customColor="#cc6699">
-                <FaSass />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="JavaScript">
-              <SkillsIconButton customColor="#f0db4f">
-                <FaJs />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="React">
-              <SkillsIconButton customColor="#31b7d2">
-                <FaReact />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="Angular">
-              <SkillsIconButton customColor="#dd0330">
-                <FaAngular />
-              </SkillsIconButton>
-            </SkillsTooltip>
+            {frontEndData.map(({ id, ...props }) => (
+              <TooltipIcon {...props} key={id} />
+            ))}
           </SkillsChip>
         </SkillsLi>
 
@@ -83,57 +43,27 @@ export default function SkillsCode() {
             BACK <SkillsLight>END</SkillsLight>
           </SkillsText>
           <SkillsChip>
-            <SkillsTooltip title="NodeJS">
-              <SkillsIconButton customColor="#77ab43">
-                <FaNodeJs />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="MongoDB">
-              <SkillsIconButton customColor="#48ab4c">
-                <DiMongodb />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="SQL">
-              <SkillsIconButton customColor="#26557c">
-                <DiMysql />
-              </SkillsIconButton>
-            </SkillsTooltip>
+            {backEndData.map(({ id, ...props }) => (
+              <TooltipIcon {...props} key={id} />
+            ))}
           </SkillsChip>
         </SkillsLi>
 
         <SkillsLi>
           <SkillsText>GIT</SkillsText>
           <SkillsChip>
-            <SkillsTooltip title="GIT">
-              <SkillsIconButton customColor="#f05033">
-                <FaGitAlt />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="GitHub">
-              <SkillsIconButton customColor="#6a6a6a">
-                <FaGithub />
-              </SkillsIconButton>
-            </SkillsTooltip>
+            {gitData.map(({ id, ...props }) => (
+              <TooltipIcon {...props} key={id} />
+            ))}
           </SkillsChip>
         </SkillsLi>
 
         <SkillsLi>
           <SkillsText>CLOUD</SkillsText>
           <SkillsChip>
-            <SkillsTooltip title="Heroku">
-              <SkillsIconButton customColor="#8062a7">
-                <DiHeroku />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="DigitalOcean">
-              <SkillsIconButton customColor="#0080ff">
-                <FaDigitalOcean />
-              </SkillsIconButton>
-            </SkillsTooltip>
+            {cloudData.map(({ id, ...props }) => (
+              <TooltipIcon {...props} key={id} />
+            ))}
           </SkillsChip>
         </SkillsLi>
       </CustomFade>

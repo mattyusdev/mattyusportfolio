@@ -3,12 +3,11 @@ import {
   SkillsUl,
   SkillsLi,
   SkillsChip,
-  SkillsTooltip,
-  SkillsIconButton,
   SkillsText,
 } from "../styles/elements/aboutElements";
-import { DiPhotoshop, DiIllustrator } from "react-icons/di";
 import { CustomFade } from "../styles/globals/animations";
+import { graphicData } from "../data/about/designAboutData";
+import { TooltipIcon } from "../styles/globals/tooltipIcons";
 
 export default function SkillsDesign() {
   return (
@@ -23,17 +22,9 @@ export default function SkillsDesign() {
         <SkillsLi>
           <SkillsText>GRAPHIC</SkillsText>
           <SkillsChip>
-            <SkillsTooltip title="Photoshop">
-              <SkillsIconButton customColor="#5aa4c5">
-                <DiPhotoshop />
-              </SkillsIconButton>
-            </SkillsTooltip>
-
-            <SkillsTooltip title="Illustrator">
-              <SkillsIconButton customColor="#ffaf42">
-                <DiIllustrator />
-              </SkillsIconButton>
-            </SkillsTooltip>
+            {graphicData.map(({ id, ...props }) => (
+              <TooltipIcon {...props} key={id} />
+            ))}
           </SkillsChip>
         </SkillsLi>
       </CustomFade>

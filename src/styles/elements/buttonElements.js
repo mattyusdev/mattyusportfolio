@@ -108,6 +108,11 @@ export const ButtonMain = styled(ButtonWithProps)`
         padding: 0 1.3rem;
         border-radius: 3.1rem;
 
+        svg {
+          font-size: 1.5rem;
+          margin: 0.3rem;
+        }
+
         @media ${device.tablet} {
           font-size: 0.9rem;
           height: 3.8rem;

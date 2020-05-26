@@ -197,16 +197,19 @@ export const SkillsTooltip = styled(TooltipWithProps)`
 `;
 
 const IconButtonWithProps = React.forwardRef(
-  ({ customColor, ...otherProps }, ref) => (
+  ({ customColor, customIcon, content, ...otherProps }, ref) => (
     <IconButton color="inherit" {...otherProps} ref={ref} />
   )
 );
 
 export const SkillsIconButton = styled(IconButtonWithProps)`
   && {
-    font-size: 1.7rem;
     padding: 0.3rem;
-    transition: 0.4s;
+    
+    svg, .custom-icon::before {
+      transition: 0.7s;
+      font-size: 1.7rem;
+    }
 
     &:hover {
       background: linear-gradient(
@@ -216,22 +219,28 @@ export const SkillsIconButton = styled(IconButtonWithProps)`
       );
     }
 
-    svg {
-      transition: 0.4s;
-
-      ${(props) =>
-        props.customColor
-          ? css`
-              color: ${props.customColor};
-            `
-          : css`
-              color: #fff;
-            `}
+    &:hover svg, &:hover .custom-icon::before {
+          color: #fff;
     }
 
-    &:hover svg {
-      color: #fff;
-    }
+
+    ${(props) =>
+      props.customColor &&
+      css`
+        svg,
+        .custom-icon::before {
+          color: ${props.customColor};
+        }
+      `}
+
+    ${(props) =>
+      props.content &&
+      css`
+        .custom-icon:before {
+            content: "${props.content}";
+        }
+      `}
+
 
     @media ${device.tablet} {
       font-size: 2rem;

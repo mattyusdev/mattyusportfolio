@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AppBar, Toolbar, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Button, IconButton } from "@material-ui/core";
 import colors from "../globals/palette";
 import { slideLeft } from "../globals/animations";
 
@@ -44,14 +44,21 @@ export const FooterToolBar = styled(Toolbar)`
 
 const CustomButton = (props) => <Button color="inherit" {...props}></Button>;
 
-export const SocialButton = styled(CustomButton)`
+const IconButtonWithProps = React.forwardRef(
+  ({ IconComponent, ...otherProps }, ref) => (
+    <IconButton color="inherit" {...otherProps} ref={ref}>
+      <IconComponent />
+    </IconButton>
+  )
+);
+
+export const SocialButton = styled(IconButtonWithProps)`
   && {
     border-radius: 50%;
-    min-height: 2.8rem;
-    min-width: 2.8rem;
     margin: 0 1rem;
     background: #fff;
     transition: 0.7s;
+    padding: 0.7rem;
 
     &:hover {
       background: linear-gradient(
@@ -68,6 +75,6 @@ export const SocialButton = styled(CustomButton)`
   & svg {
     color: ${colors.background};
     transition: 0.7s;
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 `;
