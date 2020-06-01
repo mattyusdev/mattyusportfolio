@@ -15,7 +15,7 @@ import {
   gitHubData,
   herokuData,
   digitalOceanData,
-} from "../techIconsData";
+} from "../techicons/techIconsData";
 
 export const frontEndData = [
   html5Data,

@@ -4,10 +4,10 @@ import {
   SkillsLi,
   SkillsChip,
   SkillsText,
-} from "../styles/elements/aboutElements";
-import { CustomFade } from "../styles/globals/animations";
-import { graphicData } from "../data/about/designAboutData";
-import { TooltipIcon } from "../styles/globals/tooltipIcons";
+} from "../../styles/elements/aboutElements";
+import { CustomFade } from "../../styles/globals/animations";
+import { graphicData } from "../../data/about/designAboutData";
+import { TooltipIcon } from "../../styles/globals/elements/tooltipIconsElements";
 
 export default function SkillsDesign() {
   return (

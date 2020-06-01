@@ -3,8 +3,8 @@ import {
   FooterAppBar,
   SocialButton,
   FooterToolBar,
-} from "../styles/elements/footerElements";
-import { footerIcons } from "../data/footer/footerIconsData";
+} from "../../styles/elements/footerElements";
+import { footerIcons } from "../../data/footer/footerIconsData";
 
 export default function Footer() {
   return (

@@ -8,7 +8,7 @@ export const HomeBackground = styled.div`
   ${(props) =>
     props.timeStamp &&
     css`
-      background: url("/mattyusbackground_effects.svg?${props.timeStamp}") no-repeat center
+      background: url("/svg/mattyusbackground_effects.svg?${props.timeStamp}") no-repeat center
         fixed;
     `}
 

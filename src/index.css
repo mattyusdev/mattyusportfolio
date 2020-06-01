@@ -38,24 +38,6 @@ code {
   font-display: block;
 }
 
-/* [class^="icon-"],
-[class*=" icon-"] {
-  font-family: "icomoon" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-typescriptlang-icon:before {
-  content: "\e900";
-  color: #007acc;
-} */
-
 .custom-icon {
   font-family: "icomoon" !important;
   font-style: normal;

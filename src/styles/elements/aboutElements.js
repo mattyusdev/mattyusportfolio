@@ -12,7 +12,7 @@ export const AboutBackground = styled.div`
 `;
 
 export const AboutRow = styled.div`
-  min-height: calc(100vh - 104px);
+  min-height: calc(45vh - 52px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,66 +21,74 @@ export const AboutRow = styled.div`
   ${(props) =>
     props.background &&
     css`
-      background: url("/mattyusbackground_noeffects.svg") no-repeat center fixed;
+      background: url("/svg/mattyusbackground_noeffects.svg") no-repeat center;
       background-size: cover;
+    `}
+
+  ${(props) =>
+    props.info &&
+    css`
+      min-height: calc(55vh - 52px);
+      background: ${colors.tertiary};
     `}
 `;
 
 /////////////////////ABOUT
 
 export const AboutInfo = styled.h4`
-  width: 70%;
-  margin: 1.5rem auto;
+  width: 95%;
+  margin: 2rem auto;
   text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+
+  ${(props) =>
+    props.top &&
+    css`
+      font-size: 1.7rem;
+      margin: 4rem auto 7rem auto;
+    `};
+
+  ${(props) =>
+    props.bottom &&
+    css`
+      font-size: 0.8rem;
+      margin: 3rem auto;
+      width: 60%;
+
+      @media ${device.mobileL} {
+        && {
+          font-size: 1.1rem;
+          width: 70%;
+        }
+      }
+    `};
+
+  @media ${device.mobileL} {
+    width: 85%;
+
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+`;
+
+export const AboutInfoColor = styled.span`
+  ${(props) =>
+    props.primary &&
+    css`
+      color: ${colors.primary};
+    `}
+
+  ${(props) =>
+    props.secondary &&
+    css`
+      color: ${colors.secondary};
+    `}
 `;
 
 export const AboutHeart = styled.span`
   color: crimson;
-`;
-
-export const AboutImageFrame = styled.div`
-  margin: 5rem auto;
-  position: relative;
-  overflow: hidden;
-  box-shadow: -2px 16px 44px -10px rgba(0, 0, 0, 0.62);
-
-  &,
-  > * {
-    width: 13rem;
-    border-radius: 50%;
-    height: 100%;
-  }
-
-  :hover div {
-    transform: translate(0, 0);
-  }
-`;
-
-export const AboutImage = styled.img`
-    display: block;
-  /* border: 5px solid ${colors.tertiary}; */
-`;
-
-export const AboutImageOverlay = styled.div`
-  background: linear-gradient(
-    to right,
-    ${colors.gradientOne},
-    ${colors.gradientTwo}
-  );
-  position: absolute;
-  transition: 0.4s;
-  top: 0;
-  left: 0;
-  transform: translate(0, 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const AboutImageOverlayText = styled.h3`
-  font-size: 1rem;
-  text-align: center;
-  width: 70%;
 `;
 
 /////////////////////SKILLS
@@ -88,6 +96,7 @@ export const AboutImageOverlayText = styled.h3`
 export const SkillsBackground = styled.div`
   padding: 10px;
   min-height: 650px;
+  background: ${colors.quaternary};
 
   @media ${device.laptop} {
     min-height: 600px;

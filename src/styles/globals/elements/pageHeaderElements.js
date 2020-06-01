@@ -1,22 +1,20 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import colors from "../globals/palette";
-import { CustomZoom } from "../globals/animations";
-import { device } from "../globals/responsive";
+import colors from "../palette";
+import { CustomZoom } from "../animations";
+import { device } from "../responsive";
 
 const PageHeaderFrame = styled.h1`
   text-align: center;
   letter-spacing: 2px;
   font-size: 2rem;
+  margin: 4rem 0 0 0;
 
   ${(props) =>
-    props.myWork
-      ? css`
-          margin: 1rem 0 0 0;
-        `
-      : css`
-          margin: 4rem 0 0 0;
-        `}
+    props.myWork &&
+    css`
+      margin: 1rem 0 0 0;
+    `}
 `;
 
 const PageHeaderText = styled.span``;
@@ -44,32 +42,30 @@ const PageHeaderCurly = styled.span`
 const PageHeaderHr = styled.hr`
   width: 5rem;
   border: 1.5px solid ${colors.primary};
+  margin: 1.3rem auto 4rem auto;
 
   @media ${device.tablet} {
     border-width: 1px;
   }
 
   ${(props) =>
-    props.myWork
-      ? css`
-          margin: 1.3rem auto 1.3rem auto;
-        `
-      : css`
-          margin: 1.3rem auto 4rem auto;
-        `}
+    props.myWork &&
+    css`
+      margin: 1.3rem auto 1.3rem auto;
+    `}
 `;
 
-const PageHeader = (props) => (
+const PageHeader = ({ myWork, ...props }) => (
   <>
     <CustomZoom triggerOnce>
-      <PageHeaderFrame {...props}>
+      <PageHeaderFrame {...props} myWork={myWork}>
         <PageHeaderCurly left={true}>{"{"}</PageHeaderCurly>
         <PageHeaderText>{props.text}</PageHeaderText>
         <PageHeaderCurly right={true}>{"}"}</PageHeaderCurly>
       </PageHeaderFrame>
     </CustomZoom>
     <CustomZoom triggerOnce delay={300}>
-      <PageHeaderHr myWork={props.myWork} />
+      <PageHeaderHr myWork={myWork} />
     </CustomZoom>
   </>
 );

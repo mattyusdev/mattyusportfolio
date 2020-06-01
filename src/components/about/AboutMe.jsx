@@ -4,20 +4,20 @@ import {
   SkillsBackground,
   AboutInfo,
   AboutHeart,
-  AboutImage,
   SkillsHeader,
   SkillsMain,
   AboutRow,
-  AboutImageFrame,
-  AboutImageOverlay,
-  AboutImageOverlayText,
-} from "../styles/elements/aboutElements";
-import PageHeader from "../styles/elements/pageHeaderElements";
-import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
+  AboutInfoColor,
+} from "../../styles/elements/aboutElements";
+import PageHeader from "../../styles/globals/elements/pageHeaderElements";
+import {
+  ButtonMain,
+  ButtonCurly,
+} from "../../styles/globals/elements/buttonElements";
 import SkillsCode from "./SkillsCode";
 import SkillsDesign from "./SkillsDesign";
-import { CustomFade, CustomBounce } from "../styles/globals/animations";
-import useScrollTop from "../hooks/useScrollTop";
+import { CustomFade, CustomBounce } from "../../styles/globals/animations";
+import useScrollTop from "../../hooks/useScrollTop";
 import { Helmet } from "react-helmet-async";
 
 export default function AboutMe() {
@@ -32,29 +32,26 @@ export default function AboutMe() {
       </Helmet>
 
       <AboutRow background={true}>
-        <PageHeader text="ABOUT ME" />
+        <PageHeader text="ABOUT ME" aboutMe={true} />
+      </AboutRow>
+
+      <AboutRow info={true}>
         <CustomFade triggerOnce direction="top" cascade>
           <AboutInfo>
-            Adsdsatur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-            gravida. Risus commodo viverra maecenas accumsan lacus vel
-            facilisis.
+            In <AboutInfoColor primary={true}>2015</AboutInfoColor> I've began
+            my journey as graphic designer, I wasn't satisfied since I can't
+            build an app that actually works.
           </AboutInfo>
           <AboutInfo>
-            I’ve used: NodeJS, React, Formik, Material-UI(custom),
-            Styled-Components, React-Awesome-Reveal and{" "}
-            <AboutHeart>❤</AboutHeart> for this website.
+            In <AboutInfoColor secondary={true}>2019</AboutInfoColor> I've
+            started to learn full stack web development and instantly fell in
+            love with it.
           </AboutInfo>
-        </CustomFade>
-        <CustomFade delay={600} direction="top">
-          <AboutImageFrame>
-            <AboutImageOverlay>
-              <AboutImageOverlayText>
-                Me and My Workspace ;)
-              </AboutImageOverlayText>
-            </AboutImageOverlay>
-            <AboutImage src="/about_img.jpg" alt="Me and My Workspace ;)" />
-          </AboutImageFrame>
+          <AboutInfo bottom={true}>
+            I’ve used: NodeJS, React, Formik & Yup, Material-UI,
+            Styled-Components, React-Awesome-Reveal, React Icons, IcoMoon, React
+            Helmet and <AboutHeart>❤</AboutHeart> for this website.
+          </AboutInfo>
         </CustomFade>
       </AboutRow>
 

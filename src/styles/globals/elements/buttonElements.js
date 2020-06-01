@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Button } from "@material-ui/core";
-import colors from "../globals/palette";
-import { device } from "../globals/responsive";
+import colors from "../palette";
+import { device } from "../responsive";
 
 export const ButtonCurly = styled.span`
   color: ${colors.secondary};

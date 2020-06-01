@@ -5,11 +5,14 @@ import {
   NavLinksFrame,
   NavLinksLi,
   NavHamburger,
-} from "../styles/elements/navElements";
-import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
+} from "../../styles/elements/navElements";
+import {
+  ButtonMain,
+  ButtonCurly,
+} from "../../styles/globals/elements/buttonElements";
 import { Link } from "react-router-dom";
 import { RiMenu5Line, RiCloseLine } from "react-icons/ri";
-import { CustomFade } from "../styles/globals/animations";
+import { CustomFade } from "../../styles/globals/animations";
 
 export default function Navbar({ location, setIsOpenNav, isOpenNav }) {
   return (

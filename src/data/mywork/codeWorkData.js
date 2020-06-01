@@ -9,7 +9,7 @@ import {
   reactData,
   reduxData,
   sassData,
-} from "../techIconsData";
+} from "../techicons/techIconsData";
 
 const codeWorkData = [
   {

@@ -7,13 +7,10 @@ import {
   MyWorkImageHeader,
   MyWorkImageHr,
   MyWorkImageInfo,
-} from "../styles/elements/myWorkElements";
-import { ButtonMain } from "../styles/elements/buttonElements";
-import {
-  SkillsIconButton,
-  SkillsTooltip,
-} from "../styles/elements/aboutElements";
-import { TooltipIcon, CustomIconButton } from "../styles/globals/tooltipIcons";
+} from "../../styles/elements/myWorkElements";
+import { ButtonMain } from "../../styles/globals/elements/buttonElements";
+
+import { TooltipIcon } from "../../styles/globals/elements/tooltipIconsElements";
 import { FaGithub, FaBehance } from "react-icons/fa";
 
 export default function MyWorkImage({ data, code }) {

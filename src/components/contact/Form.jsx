@@ -8,13 +8,13 @@ import {
   ContactSent,
   ContactErrorMessage,
   ContactSvgSpinner,
-} from "../styles/elements/contactElements";
-import { ButtonMain } from "../styles/elements/buttonElements";
+} from "../../styles/elements/contactElements";
+import { ButtonMain } from "../../styles/globals/elements/buttonElements";
 
 import { BsPerson, BsPencilSquare } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiMessage2Line } from "react-icons/ri";
-import { CustomFade, CustomBounce } from "../styles/globals/animations";
+import { CustomFade, CustomBounce } from "../../styles/globals/animations";
 import { FaRegPaperPlane } from "react-icons/fa";
 import Axios from "axios";
 
@@ -66,7 +66,10 @@ export default function Form() {
             {!isSent.sent ? (
               isSent.loading ? (
                 <ContactSent>
-                  <ContactSvgSpinner type="image/svg+xml" data="spinner.svg" />
+                  <ContactSvgSpinner
+                    type="image/svg+xml"
+                    data="/svg/spinner.svg"
+                  />
                   <h2>Sending . . .</h2>
                 </ContactSent>
               ) : (

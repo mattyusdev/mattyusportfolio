@@ -2,10 +2,13 @@ import React from "react";
 import {
   MyWorkBackground,
   MyWorkColumn,
-} from "../styles/elements/myWorkElements";
+} from "../../styles/elements/myWorkElements";
 import { Link } from "react-router-dom";
-import { ButtonMain, ButtonCurly } from "../styles/elements/buttonElements";
-import { CustomBounce } from "../styles/globals/animations";
+import {
+  ButtonMain,
+  ButtonCurly,
+} from "../../styles/globals/elements/buttonElements";
+import { CustomBounce } from "../../styles/globals/animations";
 import { Helmet } from "react-helmet-async";
 
 export default function MyWork() {

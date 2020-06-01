@@ -11,7 +11,7 @@ export const ContactBackground = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: url("/mattyusbackground_noeffects.svg") no-repeat center;
+  background: url("/svg/mattyusbackground_noeffects.svg") no-repeat center;
   background-size: cover;
 `;
 

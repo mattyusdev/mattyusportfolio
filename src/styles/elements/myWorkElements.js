@@ -35,7 +35,8 @@ export const MyWorkColumn = styled.div`
   ${(props) =>
     props.background
       ? css`
-          background: url("/mattyusbackground_noeffects.svg") no-repeat center;
+          background: url("/svg/mattyusbackground_noeffects.svg") no-repeat
+            center;
           background-size: cover;
         `
       : css`
@@ -47,7 +48,7 @@ export const MyWorkHeader = styled.div`
   text-align: center;
   width: 100%;
   height: 40vh;
-  background: url("/mattyusbackground_noeffects.svg") no-repeat center;
+  background: url("/svg/mattyusbackground_noeffects.svg") no-repeat center;
   background-size: cover;
   display: flex;
   justify-content: center;

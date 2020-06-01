@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AppBar, Toolbar, Button, IconButton } from "@material-ui/core";
+import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import colors from "../globals/palette";
 import { slideLeft } from "../globals/animations";
 
@@ -41,8 +41,6 @@ export const FooterToolBar = styled(Toolbar)`
 `;
 
 /////////////////////SOCIAL
-
-const CustomButton = (props) => <Button color="inherit" {...props}></Button>;
 
 const IconButtonWithProps = React.forwardRef(
   ({ IconComponent, ...otherProps }, ref) => (

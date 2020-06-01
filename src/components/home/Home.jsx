@@ -10,14 +10,14 @@ import {
   MattyusCurly,
   WebHeader,
   MattyusHeaderText,
-} from "../styles/elements/homeElements";
-import { ButtonMain } from "../styles/elements/buttonElements";
+} from "../../styles/elements/homeElements";
+import { ButtonMain } from "../../styles/globals/elements/buttonElements";
 import { Link } from "react-router-dom";
 import {
   CustomFade,
   CustomZoom,
   CustomBounce,
-} from "../styles/globals/animations";
+} from "../../styles/globals/animations";
 
 export default function Home() {
   const timeStamp = new Date().getTime();

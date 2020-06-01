@@ -1,4 +1,4 @@
-import { FaBehance, FaGithub, FaSkype } from "react-icons/fa";
+import { FaBehance, FaGithub } from "react-icons/fa";
 
 export const footerIcons = [
   {

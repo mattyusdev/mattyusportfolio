@@ -1,3 +1,3 @@
-import { photoshopData, illustratorData } from "../techIconsData";
+import { photoshopData, illustratorData } from "../techicons/techIconsData";
 
 export const graphicData = [photoshopData, illustratorData];

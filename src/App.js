@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Route, useLocation, Redirect, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import MyWork from "./components/MyWork";
-import AboutMe from "./components/AboutMe";
-import Contact from "./components/Contact";
-import MyWorkDesign from "./components/MyWorkDesign";
+import Home from "./components/home/Home";
+import Navbar from "./components/global/Navbar";
+import Footer from "./components/global/Footer";
+import MyWork from "./components/mywork/MyWork";
+import AboutMe from "./components/about/AboutMe";
+import Contact from "./components/contact/Contact";
+import MyWorkDesign from "./components/mywork/MyWorkDesign";
 import { GlobalStyle } from "./styles/globals/responsive";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import MyWorkCode from "./components/MyWorkCode";
+import MyWorkCode from "./components/mywork/MyWorkCode";
 
 function App() {
   const location = useLocation().pathname;

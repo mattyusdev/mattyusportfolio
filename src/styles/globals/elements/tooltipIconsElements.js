@@ -1,8 +1,8 @@
 import React from "react";
 import { Tooltip, IconButton, Zoom } from "@material-ui/core";
-import colors from "./palette";
+import colors from "../palette";
 import styled, { css } from "styled-components";
-import { device } from "./responsive";
+import { device } from "../responsive";
 
 const TooltipWithProps = (props) => (
   <Tooltip

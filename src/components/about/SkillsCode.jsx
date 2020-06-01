@@ -6,16 +6,16 @@ import {
   SkillsChip,
   SkillsLight,
   SkillsText,
-} from "../styles/elements/aboutElements";
+} from "../../styles/elements/aboutElements";
 
-import { CustomFade } from "../styles/globals/animations";
+import { CustomFade } from "../../styles/globals/animations";
 import {
   frontEndData,
   backEndData,
   gitData,
   cloudData,
-} from "../data/about/codeAboutData";
-import { TooltipIcon } from "../styles/globals/tooltipIcons";
+} from "../../data/about/codeAboutData";
+import { TooltipIcon } from "../../styles/globals/elements/tooltipIconsElements";
 
 export default function SkillsCode() {
   return (
